@@ -1,11 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { InitialStateType, NewsCardType } from "./types";
 
-const initialState = {
+const initialState: InitialStateType = {
     newsData: []
 }
 
 export const newsSlice = createSlice({
     name: "newsData",
     initialState,
-    reducers: {}, 
+    reducers: {
+        getNewsData: (state, action: PayloadAction<Array<NewsCardType>>) => {
+            state.newsData = action.payload;
+        }
+    }, 
 });
+
+export const { getNewsData } = newsSlice.actions;
+
+export const newsDataReducer = newsSlice.reducer;
