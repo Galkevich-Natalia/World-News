@@ -12,12 +12,6 @@ export const News = () => {
     const news = useSelector((state: StoreType) => state.newsData); 
     const {loading, error} = useSelector((state: StoreType) => state);
 
-    const dispatch = useDispatch<AppDispatch>();
-
-    useEffect(() => {
-        dispatch(fetchNews());
-    }, []);
-
     if (loading) {
         return <CircularProgress color="secondary" />;
     };
