@@ -17,4 +17,6 @@ export interface NewsCardType {
 
 export type InitialStateType = {
     newsData: Array<NewsCardType>;
+    loading: boolean;
+    error: any;
 };

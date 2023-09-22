@@ -1,31 +1,33 @@
 import { useDispatch, useSelector } from "react-redux";
 import { NewsCard } from "./newsCard";
 import { AppDispatch, StoreType } from "../../../../redux/store";
-import { getNewsData } from "../../../../redux/reducers/newsDataReducer";
+import { fetchNews } from "../../../../redux/reducers/newsDataReducer";
 import { useEffect } from "react";
+import { v4 as uuidv4 } from 'uuid';
+import { CircularProgress } from "@mui/material";
+import { ErrorMessage } from "../../../general/components/errorMessage/errorMessage";
 
 export const News = () => {
 
     const news = useSelector((state: StoreType) => state.newsData); 
+    const {loading, error} = useSelector((state: StoreType) => state);
+
     const dispatch = useDispatch<AppDispatch>();
 
-    const getNews = () => {
-        fetch(`https://newsdata.io/api/1/news?apikey=pub_292815bf2785377c26ea1de22dd3cc066df8f&q=pizza`)
-            .then((responce) => responce.json())
-            .then((json) => dispatch(getNewsData(json.results)));
-    };
-
     useEffect(() => {
-        getNews();
+        dispatch(fetchNews());
     }, []);
 
+    if (loading) {
+        return <CircularProgress color="secondary" />;
+    };
+
     return (
-        <>
-            <div>
-                {news.map((item: any) => (
-                    < NewsCard key={item.id} dataNews={item} />
-                ))}
-            </div>
-        </>
+        <div>
+            {error && <ErrorMessage errorText={error} />}
+            {news.map((item: any) => (
+                < NewsCard key={uuidv4()} dataNews={item} />
+            ))}
+        </div>
     );
 };
