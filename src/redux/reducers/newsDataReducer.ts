@@ -1,5 +1,6 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { InitialStateType, NewsCardType } from "./types";
+import { axiosApiInstance } from "../../api/axiosConfig";
 
 const initialState: InitialStateType = {
     newsData: [],
@@ -7,14 +8,18 @@ const initialState: InitialStateType = {
     error: null,
 };
 
-export const fetchNews = createAsyncThunk('news/fetchNews',
+export const fetchNews = createAsyncThunk(
+    'news/fetchNews',
     async (_, { dispatch, rejectWithValue }) => {
-        return fetch(`https://newsdata.io/api/1/news?apikey=pub_292815bf2785377c26ea1de22dd3cc066df8f&`)
-            .then((responce) => responce.json())
-            .then((res) => res.results)
-            .catch((err) => rejectWithValue(err.message));
+        try  {
+        const result = await axiosApiInstance.get("");
+        console.log("RESULT", result)
+            dispatch(getNewsData(result.data.results));
+        } catch (error: any) {
+            return rejectWithValue(error.message);
         }
-    );
+    }
+);
 
 export const newsSlice = createSlice({
     name: "newsData",
@@ -30,8 +35,8 @@ export const newsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchNews.fulfilled, (state, action) => {
-                state.newsData = action.payload;
+            .addCase(fetchNews.fulfilled, (state) => {
+                // state.newsData = action.payload;
                 state.loading = false;
             })
             .addCase(fetchNews.rejected, (state, action) => {

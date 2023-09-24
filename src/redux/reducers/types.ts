@@ -8,7 +8,7 @@ export interface NewsCardType {
     content: string;
     pubDate: string;
     fuul_description: string;
-    image_url: null | string;
+    image_url?: string;
     sourse_id: string;
     country: Array<string>;
     category: Array<string>;
@@ -20,3 +20,5 @@ export type InitialStateType = {
     loading: boolean;
     error: any;
 };
+
+// export type NewsItemsArray = Array<NewsCardType>;
