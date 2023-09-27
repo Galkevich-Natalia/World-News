@@ -6,25 +6,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from './redux/store';
 import { useEffect } from 'react';
 import { fetchNews } from './redux/reducers/newsDataReducer';
+import { FilterNews } from './components/ui/components/filterNews/filterNews';
 
 function App() {
 
   const newsDataFromRedux = useSelector((state: StoreType) => state.newsData);
   const dispatch = useDispatch<AppDispatch>();
 
-    useEffect(() => {
-        dispatch(fetchNews());
-    }, []);
+  useEffect(() => {
+    dispatch(fetchNews())
+  }, []);
 
   return (
     <Router>
+
       <div className="App">
         < Header />
-        < News />
         <Routes>
-          <Route path="/first"></Route>
-          <Route path="/second"></Route>
-          <Route path="/third"></Route>
+          <Route path="/" element={ < News /> } />
+          <Route path="/category/:category" element={ < FilterNews /> } />
         </Routes>
       </div>
     </Router>

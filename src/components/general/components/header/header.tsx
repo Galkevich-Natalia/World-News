@@ -6,22 +6,34 @@ export const Header = () => {
     return (
         <ContainerHeader>
             <NavLink 
-                to="/firstItem" 
+                to="/" 
                 className={({ isActive}) => ( isActive ? "active-link-class" : "link")}
             >
-                <Item>First Item</Item>
+                <Item>Home</Item>
             </NavLink>
             <NavLink 
-                to="/secondItem"
+                to="/category/politics"
                 className={({ isActive}) => ( isActive ? "active-link-class" : "link")}
             >
-                <Item>Second Item</Item>
+                <Item>Politics</Item>
             </NavLink>
             <NavLink 
-                to="/thirdItem"
+                to="/category/sports"
                 className={({ isActive}) => ( isActive ? "active-link-class" : "link")}
             >
-                <Item>Third Item</Item>
+                <Item>Sports</Item>
+            </NavLink>
+            <NavLink 
+                to="/category/entertainment"
+                className={({ isActive}) => ( isActive ? "active-link-class" : "link")}
+            >
+                <Item>Entertainment</Item>
+            </NavLink>
+            <NavLink 
+                to="/category/technology"
+                className={({ isActive}) => ( isActive ? "active-link-class" : "link")}
+            >
+                <Item>Technology</Item>
             </NavLink>
         </ContainerHeader>
     )

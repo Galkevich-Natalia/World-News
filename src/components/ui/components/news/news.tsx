@@ -1,8 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { NewsCard } from "./newsCard";
-import { AppDispatch, StoreType } from "../../../../redux/store";
-import { fetchNews } from "../../../../redux/reducers/newsDataReducer";
-import { useEffect } from "react";
+import { StoreType } from "../../../../redux/store";
+// import { fetchNews } from "../../../../redux/reducers/newsDataReducer";
+// import { useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import { CircularProgress } from "@mui/material";
 import { ErrorMessage } from "../../../general/components/errorMessage/errorMessage";
