@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './assets/reset.css';
 import { Header } from './components/general/components/header/header';
 import { News } from './components/ui/components/news/news';
 import { useDispatch, useSelector } from 'react-redux';

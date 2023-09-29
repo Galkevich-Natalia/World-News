@@ -1,21 +1,24 @@
 import { FC } from "react"
+import { Container, Description, Img, ImgContainer, TextContainer, TextElements, Title} from "./styledNewsCard";
 import { NewsCardType } from "../../../../redux/reducers/types";
-
 interface NewsCardProps {
-    dataNews: NewsCardType;
+  dataNews: NewsCardType;
 }
 
 export const NewsCard: FC<NewsCardProps> = ({ dataNews }) => {
-    return (
-      <div style={{border: "1px solid black", padding: 20, margin: 20}}>
-        <h2>{dataNews.title}</h2>
-        <h2>{dataNews.creator}</h2>
-        <img src={dataNews.image_url}></img>
-        <h4>{dataNews.description}</h4>
-        <h4>{dataNews.pubDate}</h4>
-        <h4>{dataNews.country}</h4>
-        <h4>{dataNews.category}</h4>
-        <h4>{dataNews.language}</h4>
-      </div>  
-    );
+  return (
+    <Container>
+      <TextContainer>
+        <TextElements>
+          <Title>{dataNews.title}</Title>
+          {/* <Description>{dataNews.description}</Description> */}
+          {/* <h2>Author: {dataNews.creator}</h2> */}
+          {/* <h3>Category: {dataNews.category}</h3> */}
+        </TextElements>
+      </TextContainer>
+      <ImgContainer>
+        <Img src={dataNews.image_url}></Img>
+      </ImgContainer>
+    </Container>
+  );
 };
