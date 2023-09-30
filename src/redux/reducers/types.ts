@@ -1,18 +1,27 @@
 export interface NewsCardType {
-    title: string;
-    link: string;
-    keywords: Array<string>;
-    creator: Array<string>;
-    video_url: null | string;
-    description: string;
-    content: string;
-    pubDate: string;
-    fuul_description: string;
-    image_url?: string;
-    sourse_id: string;
-    country: Array<string>;
-    category: Array<string>;
-    language: string;
+    authors: Array<object>,
+    body: string,
+    dataType: string,
+    date: string,
+    dateTime: string,
+    dateTimePub: string,
+    eventUri: string | null,
+    image: string,
+    isDuplicate: boolean,
+    lang: string,
+    relevance: number,
+    sentiment: number,
+    sim: number,
+    source: {
+        dataType: string,
+        title: string,
+        uri: string
+    },
+    time: string,
+    title: string,
+    uri: string,
+    url: string,
+    wgt: number
 };
 
 export type InitialStateType = {

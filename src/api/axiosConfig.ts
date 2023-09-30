@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const axiosApiInstance = axios.create({
-    baseURL: "https://newsdata.io/api/1",
+    baseURL: "http://eventregistry.org/api/v1/article/getArticles",
 });

@@ -17,7 +17,7 @@ export const NewsCard: FC<NewsCardProps> = ({ dataNews }) => {
         </TextElements>
       </TextContainer>
       <ImgContainer>
-        <Img src={dataNews.image_url}></Img>
+        <Img src={dataNews.image!}></Img>
       </ImgContainer>
     </Container>
   );

@@ -12,10 +12,25 @@ const initialState: InitialStateType = {
 export const fetchNews = createAsyncThunk(
     'news/fetchNews',
     async (_, { dispatch, rejectWithValue }) => {
-        try  {
-        const result = await axiosApiInstance.get("/news?apikey=pub_292815bf2785377c26ea1de22dd3cc066df8f");
-        console.log("RESULT", result)
-            dispatch(getNewsData(result.data.results));
+        try {
+            const result = await axiosApiInstance.post("", {
+                query: {
+                    $query: {
+                        lang: 'eng',
+                    },
+                    $filter: {
+                        forceMaxDataTimeWindow: '31',
+                    },
+                },
+                "resultType": "articles",
+                "articlesSortBy": "date",
+                "includeArticleImage": true,
+                "includeArticleEventUri": true,
+                "articlesCount": 15,
+                "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
+            });
+            console.log("RESULT", result)
+            dispatch(getNewsData(result.data.articles.results));
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
@@ -25,10 +40,27 @@ export const fetchNews = createAsyncThunk(
 export const fetchNewsByCategory = createAsyncThunk<void, string>(
     'news/fetchNewsByCategory',
     async (category, { dispatch, rejectWithValue }) => {
-        try  {
-        const result = await axiosApiInstance.get(`/news?apikey=pub_292815bf2785377c26ea1de22dd3cc066df8f&language=en&category=${category}`);
-        console.log("RESULT", result)
-            dispatch(getNewsDataByCategory(result.data.results));
+        try {
+            const result = await axiosApiInstance.post("", {
+                query: {
+                    $query: {
+                        lang: 'eng',
+                        categoryUri: `dmoz/${category}`
+                    },
+                    $filter: {
+                        forceMaxDataTimeWindow: '31',
+                        isDuplicate: "skipDuplicates"
+                    },
+                },
+                "resultType": "articles",
+                "articlesSortBy": "date",
+                "includeArticleCategories": true,
+                "includeArticleImage": true,
+                "articlesCount": 15,
+                "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
+            });
+            console.log("RESULT", result)
+            dispatch(getNewsDataByCategory(result.data.articles.results));
         } catch (error: any) {
             return rejectWithValue(error.message);
         }
@@ -73,7 +105,7 @@ export const newsSlice = createSlice({
             })
 });
 
-export const { 
+export const {
     getNewsData,
     getNewsDataByCategory
 } = newsSlice.actions;
