@@ -4,25 +4,25 @@ export const ContainerHeader = styled.div`
     display: flex;
     flex-direction: column;
     background-color: black;
+    padding: 0 15px;
+`;
+
+export const WrapperHeader = styled.div`
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
 `;
 
 export const TitleContainer = styled.div`
-    max-width: 1140px;
-    width: 100%;
-    margin: 0 auto;
-`;
-
-export const Title = styled.h1`
     margin: 15px 0;
+    border-bottom: 2px solid white;
+`;
+export const Title = styled.h1`
     font-size: 45px;
     color: white;
-    border-bottom: 2px solid white;
 `;
 
 export const ItemContainer = styled.div`
-    max-width: 1140px;
-    width: 100%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 `;

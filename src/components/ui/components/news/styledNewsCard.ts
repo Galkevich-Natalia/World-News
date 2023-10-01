@@ -32,6 +32,7 @@ export const Description = styled.h4`
 
 export const ImgContainer = styled.div`
     max-width: 50%;
+    width: 100%;
     display: flex;
     justyfy-content: center;
     align-item: center;
