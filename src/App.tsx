@@ -8,6 +8,11 @@ import { AppDispatch, StoreType } from './redux/store';
 import { useEffect } from 'react';
 import { fetchNews } from './redux/reducers/newsDataReducer';
 import { FilterNews } from './components/ui/components/filterNews/filterNews';
+import { Footer } from './components/general/components/footer/footer';
+import { About } from './components/general/components/footer/about/about';
+import { ContactUs } from './components/general/components/footer/contactUs/contactUs';
+import { Help } from './components/general/components/footer/help/help';
+import { PrivacyPolicy } from './components/general/components/footer/privacyPolicy/privacyPolicy';
 
 function App() {
 
@@ -26,7 +31,12 @@ function App() {
         <Routes>
           <Route path="/" element={ < News /> } />
           <Route path="/category/:category" element={ < FilterNews /> } />
+          <Route path="/about" element={ < About />} />
+          <Route path="/contactUs" element={ < ContactUs />} />
+          <Route path="/help" element={ < Help />} />
+          <Route path="/privacyPolicy" element={ < PrivacyPolicy />} />
         </Routes>
+        < Footer />
       </div>
     </Router>
   );
