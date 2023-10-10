@@ -9,10 +9,10 @@ import { useEffect } from 'react';
 import { fetchNews } from './redux/reducers/newsDataReducer';
 import { FilterNews } from './components/ui/filterNews/filterNews';
 import { Footer } from './components/general/components/footer/footer';
-import { About } from './components/general/components/footer/about/about';
-import { ContactUs } from './components/general/components/footer/contactUs/contactUs';
-import { Help } from './components/general/components/footer/help/help';
-import { PrivacyPolicy } from './components/general/components/footer/privacyPolicy/privacyPolicy';
+import { About } from './components/ui/about/about';
+import { ContactUs } from './components/ui/contactUs/contactUs';
+import { Help } from './components/ui/help/help';
+import { PrivacyPolicy } from './components/ui/privacyPolicy/privacyPolicy';
 import { SingleNews } from './components/ui/news/singleNews/singleNews';
 
 function App() {
