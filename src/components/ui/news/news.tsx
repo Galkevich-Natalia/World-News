@@ -1,16 +1,15 @@
 import { useSelector } from "react-redux";
 import { NewsCard } from "./newsCard";
-import { StoreType } from "../../../../redux/store";
-// import { fetchNews } from "../../../../redux/reducers/newsDataReducer";
-// import { useEffect } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { CircularProgress } from "@mui/material";
-import { ErrorMessage } from "../../../general/components/errorMessage/errorMessage";
+import { CircularProgress, Link } from "@mui/material";
+import { StoreType } from "../../../redux/store";
+import { ErrorMessage } from "../../general/components/errorMessage/errorMessage";
+
 
 export const News = () => {
 
-    const news = useSelector((state: StoreType) => state.newsData); 
-    const {loading, error} = useSelector((state: StoreType) => state);
+    const news = useSelector((state: StoreType) => state.newsData);
+    const { loading, error } = useSelector((state: StoreType) => state);
 
     if (loading) {
         return <CircularProgress color="secondary" />;

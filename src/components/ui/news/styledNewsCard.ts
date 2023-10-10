@@ -4,12 +4,20 @@ export const Container = styled.div`
     border-bottom: 3px dotted black;
     padding: 20px;
     margin: 30px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
     max-width: 950px;
     width: 100%;
     // background-color: #efecec;
+`;
+
+export const Link = styled.link`
+    
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
 export const TextContainer = styled.div`
