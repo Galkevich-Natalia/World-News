@@ -14,6 +14,7 @@ import { ContactUs } from './components/ui/contactUs/contactUs';
 import { Help } from './components/ui/help/help';
 import { PrivacyPolicy } from './components/ui/privacyPolicy/privacyPolicy';
 import { SingleNews } from './components/ui/news/singleNews/singleNews';
+import { LoginForm } from './components/ui/loginForm/loginForm';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         < Header />
         <Routes>
           <Route path="/" element={ < News /> } />
+          <Route path="/login" element={ < LoginForm /> } />
           <Route path="/category/:category" element={ < FilterNews /> } />
           <Route
             path="/news/:uri/editNews"
