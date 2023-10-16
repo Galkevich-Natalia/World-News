@@ -9,9 +9,7 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
-    Container, ContainerBtn, ContainerCheckBox, ContainerCheckBoxAndHref,
-    ContainerFormControl, ContainerTextField, ContainerTitle, ErrorEmail,
-    ErrorPassword, Span, Title, Wrapper
+    Container, ContainerBtn, ContainerFormControl, ContainerTextField, ContainerTitle, ErrorInput, Title, Wrapper
 } from './styledSignUpForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
@@ -29,7 +27,7 @@ export const SignUpForm = () => {
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm({
         mode: 'onBlur',
         defaultValues: {
-            name: '',
+            userName: '',
             email: '',
             password: '',
             repeatPassword: ''
@@ -48,8 +46,8 @@ export const SignUpForm = () => {
                 <FormControl onSubmit={handleSubmit(onSubmit)}>
                     <ContainerTextField>
                         <TextField
-                            {...register("name", {
-                                required: 'Поле name не заполнено',
+                            {...register("userName", {
+                                required: 'Поле Username не заполнено',
                                 minLength: {
                                     value: 8,
                                     message: "Minimum length is 8 characters.",
@@ -60,19 +58,20 @@ export const SignUpForm = () => {
                                 }
                             })}
                             id="outlined-basic"
-                            label="Name"
+                            label="Username"
                             variant="outlined"
-                            sx={{ m: 1, width: '100%' }}
-                            error={!!errors.name}
+                            sx={{ m: 0, width: '100%' }}
+                            size="small"
+                            error={!!errors.userName}
                         />
-                        {errors.name && (
-                            <ErrorEmail>{errors.name.message}</ErrorEmail>
+                        {errors.userName && (
+                            <ErrorInput>{errors.userName.message}</ErrorInput>
                         )}
                     </ContainerTextField>
                     <ContainerTextField>
                         <TextField
                             {...register("email", {
-                                required: 'Поле email не заполнено',
+                                required: 'Поле E-mail не заполнено',
                                 pattern: {
                                     value:
                                         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
@@ -83,21 +82,22 @@ export const SignUpForm = () => {
                             id="outlined-basic"
                             label="E-mail"
                             variant="outlined"
-                            sx={{ m: 1, width: '100%' }}
+                            sx={{ m: 0, width: '100%' }}
+                            size="small"
                             error={!!errors.email}
                         />
                         {errors.email && (
-                            <ErrorEmail>{errors.email.message}</ErrorEmail>
+                            <ErrorInput>{errors.email.message}</ErrorInput>
                         )}
                     </ContainerTextField>
                     <ContainerFormControl>
-                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                        <FormControl sx={{ m: 0, width: '100%' }} variant="outlined">
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
                             >Password</InputLabel>
                             <OutlinedInput
                                 {...register("password", {
-                                    required: 'Поле password не заполнено',
+                                    required: 'Поле Password не заполнено',
                                     pattern: {
                                         value:
                                             /^(?=\S*?[0-9])(?=\S*?[?!@#$%^&*])(?=\S*?[a-z-а-я])(?=\S*?[A-Zа-яА-Я])\S+$/,
@@ -128,23 +128,23 @@ export const SignUpForm = () => {
                                     </InputAdornment>
                                 }
                                 label="Password"
+                                size="small"
                                 error={!!errors.password}
                             />
                             {errors.password && (
-                                <ErrorPassword>{errors.password.message}</ErrorPassword>
+                                <ErrorInput>{errors.password.message}</ErrorInput>
                             )}
                         </FormControl>
                     </ContainerFormControl>
                     <ContainerFormControl>
-                        <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                        <FormControl sx={{ m: 0, width: '100%' }} variant="outlined">
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
-
                             >Repeat password</InputLabel>
 
                             <OutlinedInput
                                 {...register("repeatPassword", {
-                                    required: 'Поле repaet password не заполнено',
+                                    required: 'Поле Repeat password не заполнено',
                                     pattern: {
                                         value:
                                             /^(?=\S*?[0-9])(?=\S*?[?!@#$%^&*])(?=\S*?[a-z-а-я])(?=\S*?[A-Zа-яА-Я])\S+$/,
@@ -175,10 +175,11 @@ export const SignUpForm = () => {
                                     </InputAdornment>
                                 }
                                 label="Repeat password"
+                                size="small"
                                 error={!!errors.repeatPassword}
                             />
                             {errors.repeatPassword && (
-                                <ErrorPassword>{errors.repeatPassword.message}</ErrorPassword>
+                                <ErrorInput>{errors.repeatPassword.message}</ErrorInput>
                             )}
                         </FormControl>
                     </ContainerFormControl>
