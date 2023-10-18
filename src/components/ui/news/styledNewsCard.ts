@@ -5,7 +5,7 @@ export const Container = styled.div`
     padding: 20px;
     margin: 30px auto;
     
-    max-width: 950px;
+    max-width: 850px;
     width: 100%;
     // background-color: #efecec;
 `;

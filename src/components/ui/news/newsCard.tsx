@@ -15,15 +15,19 @@ export const NewsCard: FC<NewsCardProps> = ({ dataNews }) => {
         style={{ textDecoration: "none" }}
       >
         <Wrapper>
-          <TextContainer>
-            <Title>{dataNews.title}</Title>
-          </TextContainer>
           <ImgContainer>
-          <Img src={dataNews.image!}></Img>
+            <Img src={dataNews.image!}></Img>
           </ImgContainer>
+          <TextContainer>
+            <div>
+              <Title>{dataNews.title}</Title>
+            </div>
+            {/* <div>
+              <div>{dataNews.date}</div>
+            </div> */}
+          </TextContainer>
         </Wrapper>
-
-    </Link>
+      </Link>
     </Container >
   );
 };
