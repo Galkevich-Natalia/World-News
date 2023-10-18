@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -9,10 +8,12 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
-    Container, ContainerBtn, ContainerFormControl, ContainerTextField, ContainerTitle, ErrorInput, Title, Wrapper
+    Container, ContainerBtn, ContainerFormControl, ContainerTextField, 
+    ContainerTitle, ErrorInput, Title, Wrapper
 } from './styledSignUpForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export const SignUpForm = () => {
 
@@ -37,6 +38,12 @@ export const SignUpForm = () => {
     const onSubmit = (data: any) => console.log("DataFromLogin", data);
     console.log(errors);
 
+    const navigate = useNavigate();
+
+    const handleOnLogIn = () => {
+        navigate("/login");
+    }
+
     return (
         <Container >
             <Wrapper>
@@ -47,7 +54,7 @@ export const SignUpForm = () => {
                     <ContainerTextField>
                         <TextField
                             {...register("userName", {
-                                required: 'Поле Username не заполнено',
+                                required: 'The Username field is not filled in',
                                 minLength: {
                                     value: 8,
                                     message: "Minimum length is 8 characters.",
@@ -61,7 +68,7 @@ export const SignUpForm = () => {
                             label="Username"
                             variant="outlined"
                             sx={{ m: 0, width: '100%' }}
-                            size="small"
+                            // size="small"
                             error={!!errors.userName}
                         />
                         {errors.userName && (
@@ -71,7 +78,7 @@ export const SignUpForm = () => {
                     <ContainerTextField>
                         <TextField
                             {...register("email", {
-                                required: 'Поле E-mail не заполнено',
+                                required: 'The E-mail field is not filled in',
                                 pattern: {
                                     value:
                                         /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i,
@@ -83,7 +90,7 @@ export const SignUpForm = () => {
                             label="E-mail"
                             variant="outlined"
                             sx={{ m: 0, width: '100%' }}
-                            size="small"
+                            // size="small"
                             error={!!errors.email}
                         />
                         {errors.email && (
@@ -94,15 +101,17 @@ export const SignUpForm = () => {
                         <FormControl sx={{ m: 0, width: '100%' }} variant="outlined">
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
+                                error={!!errors.password}
+                                // size="small"
                             >Password</InputLabel>
                             <OutlinedInput
                                 {...register("password", {
-                                    required: 'Поле Password не заполнено',
+                                    required: 'The Password field is not filled in',
                                     pattern: {
                                         value:
                                             /^(?=\S*?[0-9])(?=\S*?[?!@#$%^&*])(?=\S*?[a-z-а-я])(?=\S*?[A-Zа-яА-Я])\S+$/,
                                         message:
-                                            "Password must contain at least one digit, one special character '!@#$%^&*', one lowercase letter, one uppercase letter, and should not contain any spaces.",
+                                            "Password must contain at least one digit, one special character '!@#$%^&*', one lowercase letter, one uppercase letter and should not contain any spaces.",
                                     },
                                     minLength: {
                                         value: 8,
@@ -128,7 +137,7 @@ export const SignUpForm = () => {
                                     </InputAdornment>
                                 }
                                 label="Password"
-                                size="small"
+                                // size="small"
                                 error={!!errors.password}
                             />
                             {errors.password && (
@@ -140,11 +149,13 @@ export const SignUpForm = () => {
                         <FormControl sx={{ m: 0, width: '100%' }} variant="outlined">
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
+                                error={!!errors.repeatPassword}
+                                // size="small"
                             >Repeat password</InputLabel>
 
                             <OutlinedInput
                                 {...register("repeatPassword", {
-                                    required: 'Поле Repeat password не заполнено',
+                                    required: 'The Repeat password field is not filled in',
                                     pattern: {
                                         value:
                                             /^(?=\S*?[0-9])(?=\S*?[?!@#$%^&*])(?=\S*?[a-z-а-я])(?=\S*?[A-Zа-яА-Я])\S+$/,
@@ -175,7 +186,7 @@ export const SignUpForm = () => {
                                     </InputAdornment>
                                 }
                                 label="Repeat password"
-                                size="small"
+                                // size="small"
                                 error={!!errors.repeatPassword}
                             />
                             {errors.repeatPassword && (
@@ -184,10 +195,11 @@ export const SignUpForm = () => {
                         </FormControl>
                     </ContainerFormControl>
                     <ContainerBtn>
-                        <Button
+                        <Button 
                             variant="contained"
-                            sx={{ width: "100%" }}
-                        >Sign in
+                            sx={{ width: "100%", textTransform: "none" }}
+                            onClick={handleOnLogIn}
+                        >Sign up
                         </Button>
                     </ContainerBtn>
                 </FormControl>

@@ -5,7 +5,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.div`
-    max-width: 450px;
+    max-width: 400px;
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -15,8 +15,8 @@ export const Wrapper = styled.div`
     padding: 50px;
 
     @media screen and (max-width: 500px) {
-        padding: 40px 20px;
-
+        padding: 40px 30px;
+    }
 `;
 
 export const ContainerTitle = styled.div`
@@ -24,11 +24,13 @@ export const ContainerTitle = styled.div`
 `;
 
 export const Title = styled.h2`
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: 500;
     color: black;
 
     @media screen and (max-width: 500px) {
-        font-size: 35px;
+        font-size: 28px;
+    }
 `;
 
 export const ContainerTextField = styled.div`
@@ -36,6 +38,7 @@ export const ContainerTextField = styled.div`
 `;
 
 export const ErrorInput = styled.div`
+    font-size: 12px;
     margin-top: 8px;
     color: red;
 `;
@@ -50,8 +53,7 @@ export const ContainerBtn = styled.div`
     margin-top: 50px;
 
     @media screen and (max-width: 500px) {
-        margin: 50px auto 0 auto;
-        width: 150px;
+        margin: 30px auto 0 auto;
     }
 `;
 
