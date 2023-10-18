@@ -1,71 +1,81 @@
 import { styled } from "styled-components";
 
 export const Container = styled.div`
-    margin: 0 auto;
     padding: 50px 15px;
 `;
 
 export const Wrapper = styled.div`
-    border: 1px solid black;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px 50px 0 50px;
+    border: 2px solid #1976d2;
+    padding: 50px;
+
+    @media screen and (max-width: 500px) {
+        padding: 40px 30px;
+    }    
 `;
 
 export const ContainerTitle = styled.div`
-    font-size: 25px;
+    padding-bottom: 20px;
 `;
 
 export const Title = styled.h2`
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: 500;
+    color: black;
+
+    @media screen and (max-width: 500px) {
+        font-size: 28px;
+    }
 `;
 
-export const InputsContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+export const Description = styled.div`
+    text-align: center;
 `;
 
 export const ContainerTextField = styled.div`
-    padding-top: 50px;
+    padding-top: 30px;
 `;
 
-export const ErrorEmail = styled.div`
-    margin-left: 8px;
+export const ErrorInput = styled.div`
+    font-size: 12px;
+    margin-top: 8px;
     color: red;
 `;
 
 export const ContainerFormControl = styled.div`
-    padding-top: 15px;
-`;
-
-export const ErrorPassword = styled.div`
-    margin: 8px 0;
-    color: red;
-`;
-
-export const ContainerCheckBoxAndHref = styled.div`
-    width: 100%;
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-`;
-
-export const ContainerCheckBox = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-export const Span = styled.span`
-    text-decoration: none;
+    padding-top: 30px;
 `;
 
 export const ContainerBtn = styled.div`
-    max-width: 100%;
     width: 100%;
-    margin: 50px 0;
+    margin-top: 30px;
+    font-size: 15px;
+
+    @media screen and (max-width: 500px) {
+        margin: 30px auto 0 auto;
+    }
 `;
 
 export const Button = styled.button`
     width: 100%;
+`;
+
+export const ContainerText = styled.div`
+    margin: 25px auto 0 auto;
+`;
+
+export const TextAboutSignUp = styled.p`
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+`;
+
+export const LinkOnSignUp = styled.a`
+    font-weight: 700;
+    cursor: pointer;
 `;
