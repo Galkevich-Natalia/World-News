@@ -1,14 +1,36 @@
-import { NavLink } from "react-router-dom"
-import { ContainerHeader, Item, ItemContainer, Title, TitleContainer, WrapperHeader } from "./styledHeader"
+import { Link, NavLink } from "react-router-dom"
+import {
+    ContIconSearch, ContLogIn, ContSignUp, ContainerHeader, InfoContainer, Item,
+    ItemContainer, ItemInfo, Title, TitleContainer, TopHeader, WrapperHeader
+} from "./styledHeader"
 import './headerStyle.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 export const Header = () => {
     return (
         <ContainerHeader>
             <WrapperHeader>
-                <TitleContainer>
-                    <Title>World News</Title>
-                </TitleContainer>
+                <TopHeader>
+                    <TitleContainer>
+                        <Title>World News</Title>
+                    </TitleContainer>
+                    <InfoContainer>
+                        <ContLogIn>
+                            <Link to="/login">
+                                <ItemInfo>Log in</ItemInfo>
+                            </Link>
+                        </ContLogIn>
+                        <ContSignUp>
+                            <Link to="/signup">
+                                <ItemInfo>Sign up</ItemInfo>
+                            </Link>
+                        </ContSignUp>
+                        <ContIconSearch>
+                            <FontAwesomeIcon size="xl" color="white" icon={faMagnifyingGlass} />
+                        </ContIconSearch>
+                    </InfoContainer>
+                </TopHeader>
                 <ItemContainer>
                     <NavLink
                         to="/"
