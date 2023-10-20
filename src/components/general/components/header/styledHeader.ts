@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const ContainerHeader = styled.div`
+export const ContainerHeader = styled.header`
     display: flex;
     flex-direction: column;
     background-color: black;
@@ -33,14 +34,13 @@ export const InfoContainer = styled.div`
     align-items: center;
 `;
 export const ContLogIn = styled.div`
-    color: white;
     margin-right: 30px;
     font-weight: 600;
     font-size: 20px;
     cursor: poinetr;
 `;
 
-export const ItemInfo = styled.p`
+export const ItemInfo = styled(Link)`
     color: white;
 `;
 

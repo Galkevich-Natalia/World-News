@@ -17,17 +17,19 @@ export const Header = () => {
                     </TitleContainer>
                     <InfoContainer>
                         <ContLogIn>
-                            <Link to="/login">
-                                <ItemInfo>Log in</ItemInfo>
-                            </Link>
+                            <ItemInfo to="/login">
+                                Log in
+                            </ItemInfo>
                         </ContLogIn>
                         <ContSignUp>
-                            <Link to="/signup">
-                                <ItemInfo>Sign up</ItemInfo>
-                            </Link>
+                            <ItemInfo to="/signup">
+                                Sign up
+                            </ItemInfo>
                         </ContSignUp>
                         <ContIconSearch>
-                            <FontAwesomeIcon size="xl" color="white" icon={faMagnifyingGlass} />
+                            <ItemInfo to="/search">
+                                <FontAwesomeIcon size="xl" color="white" icon={faMagnifyingGlass} />
+                            </ItemInfo>
                         </ContIconSearch>
                     </InfoContainer>
                 </TopHeader>
@@ -39,34 +41,10 @@ export const Header = () => {
                         <Item>Home</Item>
                     </NavLink>
                     <NavLink
-                        to="/category/Politics"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
-                    >
-                        <Item>Politics</Item>
-                    </NavLink>
-                    <NavLink
-                        to="/category/Sports"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
-                    >
-                        <Item>Sports</Item>
-                    </NavLink>
-                    <NavLink
                         to="/category/Society"
                         className={({ isActive }) => (isActive ? "active-link-class" : "link")}
                     >
                         <Item>Society</Item>
-                    </NavLink>
-                    <NavLink
-                        to="/category/Technology"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
-                    >
-                        <Item>Technology</Item>
-                    </NavLink>
-                    <NavLink
-                        to="/category/Science"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
-                    >
-                        <Item>Science</Item>
                     </NavLink>
                     <NavLink
                         to="/category/Business"
@@ -75,13 +53,37 @@ export const Header = () => {
                         <Item>Business</Item>
                     </NavLink>
                     <NavLink
+                        to="/category/Science"
+                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                    >
+                        <Item>Science</Item>
+                    </NavLink>
+                    <NavLink
                         to="/category/Arts"
                         className={({ isActive }) => (isActive ? "active-link-class" : "link")}
                     >
                         <Item>Arts</Item>
                     </NavLink>
+                    <NavLink
+                        to="/category/Sports"
+                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                    >
+                        <Item>Sports</Item>
+                    </NavLink>
+                    <NavLink
+                        to="/category/Health"
+                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                    >
+                        <Item>Health</Item>
+                    </NavLink>
+                    <NavLink
+                        to="/category/Games"
+                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                    >
+                        <Item>Games</Item>
+                    </NavLink>
                 </ItemContainer>
             </WrapperHeader>
-        </ContainerHeader>
+        </ContainerHeader >
     )
 }
