@@ -17,6 +17,7 @@ import { SingleNews } from './components/ui/news/singleNews/singleNews';
 import { LoginForm } from './components/ui/loginForm/loginForm';
 import { SignUpForm } from './components/ui/signUpForm/signUpForm';
 import { SearchPage } from './components/ui/searchPage/searchPage';
+import { Body } from './components/ui/body/body';
 
 function App() {
 
@@ -30,25 +31,27 @@ function App() {
   return (
     <Router>
       <div className="App">
-        < Header />
-        <Routes>
-          <Route path="/" element={< News />} />
-          <Route path="/signup" element={< SignUpForm />} />
-          <Route path="/login" element={< LoginForm />} />
-          <Route path="/category/:category" element={< FilterNews />} />
-          <Route
-            path="/news/:uri/editNews"
-            element={
-              < SingleNews />
-            }
-          />
-          <Route path="/search" element={< SearchPage />}></Route>
-          <Route path="/about" element={< About />} />
-          <Route path="/contactUs" element={< ContactUs />} />
-          <Route path="/help" element={< Help />} />
-          <Route path="/privacyPolicy" element={< PrivacyPolicy />} />
-        </Routes>
-        < Footer />
+        <Body>
+          < Header />
+          <Routes>
+            <Route path="/" element={< News />} />
+            <Route path="/signup" element={< SignUpForm />} />
+            <Route path="/login" element={< LoginForm />} />
+            <Route path="/category/:category" element={< FilterNews />} />
+            <Route
+              path="/news/:uri/editNews"
+              element={
+                < SingleNews />
+              }
+            />
+            <Route path="/search" element={< SearchPage />}></Route>
+            <Route path="/about" element={< About />} />
+            <Route path="/contactUs" element={< ContactUs />} />
+            <Route path="/help" element={< Help />} />
+            <Route path="/privacyPolicy" element={< PrivacyPolicy />} />
+          </Routes>
+          < Footer />
+        </Body>
       </div>
     </Router>
   );
