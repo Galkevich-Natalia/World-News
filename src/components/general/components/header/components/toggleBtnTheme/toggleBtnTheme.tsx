@@ -16,7 +16,7 @@ export const ToggleButtonTheme = () => {
                 <FontAwesomeIcon
                     size="xl"
                     color="white"
-                    icon={themeContext.currentTheme === "light" ? faSun : faMoon} />
+                    icon={themeContext.currentTheme === "light" ? faMoon : faSun} />
             </ThemeButton>
         </ContIconTheme>
     );
