@@ -26,7 +26,7 @@ export const fetchNews = createAsyncThunk(
                 "articlesSortBy": "date",
                 "includeArticleImage": true,
                 "includeArticleEventUri": true,
-                "articlesCount": 50,
+                "articlesCount": 100,
                 "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
             });
             console.log("RESULT", result)
@@ -56,7 +56,7 @@ export const fetchNewsByCategory = createAsyncThunk<void, string>(
                 "articlesSortBy": "date",
                 "includeArticleCategories": true,
                 "includeArticleImage": true,
-                "articlesCount": 15,
+                "articlesCount": 100,
                 "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
             });
             console.log("RESULT", result)
