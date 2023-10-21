@@ -1,13 +1,24 @@
-import { Link, NavLink } from "react-router-dom"
+
 import {
-    ContIconSearch, ContLogIn, ContSignUp, ContainerHeader, InfoContainer, Item,
-    ItemContainer, ItemInfo, Title, TitleContainer, TopHeader, WrapperHeader
+    ContIconSearch, ContIconTheme, ContLogIn, ContSignUp, ContainerHeader, InfoContainer,
+    ItemContainer, ItemInfo, ThemeButton, Title, TitleContainer, TopHeader, WrapperHeader
 } from "./styledHeader"
 import './headerStyle.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
+
+    const [isIconTheme, setIsIconTheme] = useState<boolean>(false)
+
+    const handleTheme = () => {
+        setIsIconTheme(!isIconTheme)
+    }
+
     return (
         <ContainerHeader>
             <WrapperHeader>
@@ -16,6 +27,11 @@ export const Header = () => {
                         <Title>World News</Title>
                     </TitleContainer>
                     <InfoContainer>
+                        <ContIconTheme>
+                            <ThemeButton type="button" onClick={handleTheme}>
+                                <FontAwesomeIcon size="xl" color="white" icon={ isIconTheme ? faSun : faMoon } />
+                            </ThemeButton>
+                        </ContIconTheme>
                         <ContLogIn>
                             <ItemInfo to="/login">
                                 Log in
@@ -28,7 +44,7 @@ export const Header = () => {
                         </ContSignUp>
                         <ContIconSearch>
                             <ItemInfo to="/search">
-                                <FontAwesomeIcon size="xl" color="white" icon={faMagnifyingGlass} />
+                                <FontAwesomeIcon size="xl" color="white" icon={faSearch} />
                             </ItemInfo>
                         </ContIconSearch>
                     </InfoContainer>
@@ -36,51 +52,51 @@ export const Header = () => {
                 <ItemContainer>
                     <NavLink
                         to="/"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-home")}
                     >
-                        <Item>Home</Item>
+                        Home
                     </NavLink>
                     <NavLink
                         to="/category/Society"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-society")}
                     >
-                        <Item>Society</Item>
+                        Society
                     </NavLink>
                     <NavLink
                         to="/category/Business"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-business")}
                     >
-                        <Item>Business</Item>
+                        Business
                     </NavLink>
                     <NavLink
                         to="/category/Science"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-science")}
                     >
-                        <Item>Science</Item>
+                        Science
                     </NavLink>
                     <NavLink
                         to="/category/Arts"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "active-link-class" : "navLink link-arts")}
                     >
-                        <Item>Arts</Item>
+                        Arts
                     </NavLink>
                     <NavLink
                         to="/category/Sports"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-sports")}
                     >
-                        <Item>Sports</Item>
+                        Sports
                     </NavLink>
                     <NavLink
                         to="/category/Health"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "navLink active-link-class" : "navLink link-health")}
                     >
-                        <Item>Health</Item>
+                        Health
                     </NavLink>
                     <NavLink
                         to="/category/Games"
-                        className={({ isActive }) => (isActive ? "active-link-class" : "link")}
+                        className={({ isActive }) => (isActive ? "active-link-class" : "navLink link-games")}
                     >
-                        <Item>Games</Item>
+                        Games
                     </NavLink>
                 </ItemContainer>
             </WrapperHeader>
