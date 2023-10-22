@@ -2,10 +2,12 @@ import { NewsCardType } from "../../../../redux/reducers/types";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { StoreType } from "../../../../redux/store";
-import { ContainerImg, ContainerSingleCard, Img, TextBody } from "./styledSingleNews";
-import { useEffect, useState } from "react";
+import { ContainerImg, ContainerSingleCard, Img, TextBody, TitleNews } from "./styledSingleNews";
+import { useContext, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { ErrorMessage } from "../../../general/components/errorMessage/errorMessage";
+import { ThemeContext } from "../../../../themeContext/themeContext";
+import { ThemeContextType } from "../../../../themeContext/types";
 
 interface NewsCardProps {
     dataNews: NewsCardType;
@@ -22,6 +24,7 @@ export const SingleNews = () => {
     // console.log("ALL_ARRAY", allArrDataNews)
 
     const [findCard, setFindCard] = useState<NewsCardType | null>(null);
+    const themeContext = useContext<ThemeContextType>(ThemeContext);
 
     useEffect(() => {
         const allArrDataNews = [...newsData, ...newsDataByCategory]
@@ -44,13 +47,13 @@ export const SingleNews = () => {
             {findCard ?
                 <div>
                     <div>
-                        <h1>{findCard?.title}</h1>
+                        <TitleNews themestyles={themeContext.themeStyles} >{findCard?.title}</TitleNews>
                     </div>
                     <ContainerImg>
                         <Img src={findCard?.image!}></Img>
                     </ContainerImg>
                     <div>
-                        <TextBody>{findCard?.body}</TextBody>
+                        <TextBody themestyles={themeContext.themeStyles} >{findCard?.body}</TextBody>
                     </div>
                 </div>
                 : null

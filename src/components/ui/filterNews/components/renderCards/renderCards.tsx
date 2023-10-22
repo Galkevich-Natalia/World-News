@@ -4,8 +4,11 @@ import { ErrorMessage } from "../../../../general/components/errorMessage/errorM
 import { NewsCard } from "../../../news/newsCard";
 import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { NewsCardType } from "../../../../../redux/reducers/types";
+import { ThemeContext } from "../../../../../themeContext/themeContext";
+import { ThemeContextType } from "../../../../../themeContext/types";
+import { ContainerPagination } from "./styledRenderCards";
 
 export const RenderCards = () => {
 
@@ -15,6 +18,7 @@ export const RenderCards = () => {
     const [currentPage, setCurrentPage] = useState(1);
 
     const [cards, setCards] = useState<Array<NewsCardType>>([]);
+    const themeContext = useContext<ThemeContextType>(ThemeContext);
 
     useEffect(() => {
         const startIndex = (currentPage - 1) * visibleNews;
@@ -32,14 +36,21 @@ export const RenderCards = () => {
             {cards.map((item) => (
                 < NewsCard key={uuidv4()} dataNews={item} />
             ))}
-            <div style={{ display: "flex", justifyContent: "center", margin: "60px 0 40px 0" }}>
-                <Pagination count={newsByCategory.length / visibleNews}
+            <ContainerPagination
+                themestyles={themeContext.themeStyles}>
+                <Pagination
+                    count={newsByCategory.length / visibleNews}
                     page={currentPage}
                     onChange={(event, page) => setCurrentPage(page)}
                     color="primary"
                     size="large"
+                    sx={{
+                        '& .MuiPaginationItem-page, & .MuiPaginationItem-ellipsis, & .MuiPaginationItem-previousNext': {
+                            color: themeContext.themeStyles.color
+                        },
+                    }}
                 />
-            </div>
+            </ContainerPagination>
         </>
     );
 };

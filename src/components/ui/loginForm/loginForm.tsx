@@ -8,16 +8,21 @@ import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
-    Container, ContainerBtn, ContainerFormControl, ContainerText, ContainerTextField, 
+    Container, ContainerBtn, ContainerFormControl, ContainerText, ContainerTextField,
     ContainerTitle, Description, ErrorInput, LinkOnSignUp, TextAboutSignUp, Title, Wrapper
 } from './styledLoginForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../themeContext/themeContext';
+import { ThemeContextType } from '../../../themeContext/types';
 
 export const LoginForm = () => {
 
     const [showPassword, setShowPassword] = React.useState(false);
+    const themeContext = useContext<ThemeContextType>(ThemeContext);
+    const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -25,7 +30,7 @@ export const LoginForm = () => {
         event.preventDefault();
     };
 
-    const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState: { errors } } = useForm({
         mode: 'onBlur',
         defaultValues: {
             email: '',
@@ -36,15 +41,11 @@ export const LoginForm = () => {
     const onSubmit = (data: any) => console.log("DataFromLogin", data);
     console.log(errors);
 
-    const navigate = useNavigate();
-
-    const handleOnSignUp = () => {
-        navigate("/signup");
-    }
+    const handleOnSignUp = () => navigate("/signup");
 
     return (
         <Container >
-            <Wrapper>
+            <Wrapper themestyles={themeContext.themeStyles} >
                 <ContainerTitle>
                     <Title>Sign in</Title>
                 </ContainerTitle>
@@ -52,7 +53,7 @@ export const LoginForm = () => {
                     <p>Welcome back! Please enter your details</p>
                 </Description>
                 <FormControl onSubmit={handleSubmit(onSubmit)}>
-                <ContainerTextField>
+                    <ContainerTextField>
                         <TextField
                             {...register("email", {
                                 required: 'The E-mail field is not filled in',
@@ -66,8 +67,10 @@ export const LoginForm = () => {
                             id="outlined-basic"
                             label="E-mail"
                             variant="outlined"
-                            sx={{ m: 0,
+                            sx={{
+                                m: 0,
                                 width: '100%',
+                                borderRadius: '5px'
                             }}
                             // size="small"
                             error={!!errors.email}
@@ -82,7 +85,7 @@ export const LoginForm = () => {
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
                                 error={!!errors.password}
-                                // size="small"
+                            // size="small"
                             >Password</InputLabel>
                             <OutlinedInput
                                 {...register("password", {
@@ -133,7 +136,12 @@ export const LoginForm = () => {
                         </Button>
                     </ContainerBtn>
                     <ContainerText>
-                        <TextAboutSignUp>Don't have an account? <LinkOnSignUp onClick={handleOnSignUp}>Sign up </LinkOnSignUp></TextAboutSignUp>
+                        <TextAboutSignUp>Don't have an account? {' '}
+                            <LinkOnSignUp
+                                onClick={handleOnSignUp}>
+                                Sign up
+                            </LinkOnSignUp>
+                        </TextAboutSignUp>
                     </ContainerText>
                 </FormControl>
             </Wrapper>

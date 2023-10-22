@@ -14,10 +14,14 @@ import {
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../themeContext/themeContext';
+import { ThemeContextType } from '../../../themeContext/types';
 
 export const SignUpForm = () => {
 
     const [showPassword, setShowPassword] = React.useState(false);
+    const themeContext = useContext<ThemeContextType>(ThemeContext);
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -46,7 +50,7 @@ export const SignUpForm = () => {
 
     return (
         <Container >
-            <Wrapper>
+            <Wrapper themestyles={themeContext.themeStyles}>
                 <ContainerTitle>
                     <Title>Sign up</Title>
                 </ContainerTitle>

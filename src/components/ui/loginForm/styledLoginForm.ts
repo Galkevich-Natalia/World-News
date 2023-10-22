@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
+import { ThemeContextStyleProps } from "../../../themeContext/types";
 
 export const Container = styled.div`
     padding: 50px 15px;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<ThemeContextStyleProps>`
     max-width: 400px;
     margin: 0 auto;
     width: 100%;
@@ -12,8 +13,9 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     border: 2px solid #1976d2;
+    border: ${({themestyles}) => `2px solid ${themestyles.color}` };
     padding: 50px;
-
+    background-color: ${({themestyles}) => themestyles.backgroundForm };
     @media screen and (max-width: 500px) {
         padding: 40px 30px;
     }    
@@ -35,6 +37,7 @@ export const Title = styled.h2`
 
 export const Description = styled.div`
     text-align: center;
+    color: black;
 `;
 
 export const ContainerTextField = styled.div`

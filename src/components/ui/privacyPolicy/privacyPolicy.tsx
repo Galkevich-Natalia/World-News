@@ -1,11 +1,17 @@
+import { useContext } from "react";
 import { ContainerPrivacyPolice, TextItem, Title, Wrapper } from "./styledPrivacyPolicy";
+import { ThemeContext } from "../../../themeContext/themeContext";
+import { ThemeContextType } from "../../../themeContext/types";
 
 export const PrivacyPolicy = () => {
+
+    const themeContext = useContext<ThemeContextType>(ThemeContext);
+
     return (
         <ContainerPrivacyPolice>
             <Wrapper>
-                <Title>Privacy Policy</Title>
-                <TextItem>At The Times, our mission is to seek the truth and help people understand the world. We want you to understand how we handle your personal information. We also want you to know your rights and choices.
+                <Title themestyles={themeContext.themeStyles} >Privacy Policy</Title>
+                <TextItem themestyles={themeContext.themeStyles} >At The Times, our mission is to seek the truth and help people understand the world. We want you to understand how we handle your personal information. We also want you to know your rights and choices.
 
                     This policy describes how we handle your personal information when you use the “Times Services,” listed below:
 

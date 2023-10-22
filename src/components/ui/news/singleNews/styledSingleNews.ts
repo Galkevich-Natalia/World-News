@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ThemeContextStyleProps } from "../../../../themeContext/types";
 
 export const ContainerSingleCard = styled.div`
     padding: 20px;
@@ -7,9 +8,14 @@ export const ContainerSingleCard = styled.div`
     width: 100%;
 `;
 
-export const TextBody = styled.p`
+export const TitleNews = styled.h1<ThemeContextStyleProps>`
+    color: ${({themestyles}) => themestyles.color };
+`;
+
+export const TextBody = styled.p<ThemeContextStyleProps>`
     line-height: 32px;
     font-size: 18px;
+    color: ${({themestyles}) => themestyles.color };
 `;
 
 export const ContainerImg = styled.div`

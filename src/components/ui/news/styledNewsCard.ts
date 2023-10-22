@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { ThemeContextStyleProps } from "../../../themeContext/types";
 
 export const Container = styled.div`
     border-bottom: 3px dotted black;
@@ -29,9 +30,9 @@ export const TextElements = styled.div`
     flex-direction: column;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h2<ThemeContextStyleProps>`
     margin-bottom: 40px;
-    color: black;
+    color: ${({themestyles}) => themestyles.color };
 `;
 
 export const Description = styled.h4`

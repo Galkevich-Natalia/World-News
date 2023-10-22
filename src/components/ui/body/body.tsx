@@ -3,7 +3,11 @@ import { ContainerBody } from "./styledBody";
 import { ThemeContext } from "../../../themeContext/themeContext";
 import { ThemeContextType } from "../../../themeContext/types";
 
-export const Body = ({ children }: any) => {
+interface BodyProps {
+    children: React.ReactNode
+}
+
+export const Body = ({ children }: BodyProps) => {
 
     const themeContext = useContext<ThemeContextType>(ThemeContext);
 

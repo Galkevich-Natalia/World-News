@@ -2,6 +2,9 @@ import { FC } from "react"
 import { Container, Img, ImgContainer, TextContainer, TextElements, Title, Wrapper } from "./styledNewsCard";
 import { NewsCardType } from "../../../redux/reducers/types";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../../../themeContext/themeContext";
+import { ThemeContextType } from "../../../themeContext/types";
 
 
 interface NewsCardProps {
@@ -9,6 +12,9 @@ interface NewsCardProps {
 }
 
 export const NewsCard: FC<NewsCardProps> = ({ dataNews }) => {
+
+  const themeContext = useContext<ThemeContextType>(ThemeContext);
+
   return (
     <Container>
       <Link to={`/news/${dataNews.uri}/editNews`}
@@ -18,9 +24,9 @@ export const NewsCard: FC<NewsCardProps> = ({ dataNews }) => {
           <ImgContainer>
             <Img src={dataNews.image!}></Img>
           </ImgContainer>
-          <TextContainer>
+          <TextContainer >
             <div>
-              <Title>{dataNews.title}</Title>
+              <Title themestyles={themeContext.themeStyles} >{dataNews.title}</Title>
             </div>
             {/* <div>
               <div>{dataNews.date}</div>
