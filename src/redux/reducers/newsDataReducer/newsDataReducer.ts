@@ -1,6 +1,7 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { InitialStateType, NewsCardType } from "./types";
-import { axiosApiInstance } from "../../api/axiosConfig";
+import { axiosApiInstance } from "../../../api/axiosConfig";
+
 
 const initialState: InitialStateType = {
     newsData: [],

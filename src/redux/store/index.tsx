@@ -1,8 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { newsDataReducer } from "../reducers/newsDataReducer";
+import { newsDataReducer } from "../reducers/newsDataReducer/newsDataReducer";
+import userReducer from "../reducers/userDataReducer/userDataReducer";
 
 export const store = configureStore({
-    reducer: newsDataReducer,
+    reducer: {
+        newsDataCards: newsDataReducer,
+        userData: userReducer,
+    }
+    ,
 });
 
 export type StoreType = ReturnType<typeof store.getState>;

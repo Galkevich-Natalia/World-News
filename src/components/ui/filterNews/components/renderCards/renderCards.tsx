@@ -5,14 +5,14 @@ import { NewsCard } from "../../../news/newsCard";
 import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { NewsCardType } from "../../../../../redux/reducers/types";
+import { NewsCardType } from "../../../../../redux/reducers/newsDataReducer/types";
 import { ThemeContext } from "../../../../../themeContext/themeContext";
 import { ThemeContextType } from "../../../../../themeContext/types";
 import { ContainerPagination } from "./styledRenderCards";
 
 export const RenderCards = () => {
 
-    const newsByCategory = useSelector((state: StoreType) => state.newsDataByCategory);
+    const newsByCategory = useSelector((state: StoreType) => state.newsDataCards.newsDataByCategory);
 
     const visibleNews = 10;
     const [currentPage, setCurrentPage] = useState(1);

@@ -1,4 +1,4 @@
-import { NewsCardType } from "../../../../redux/reducers/types";
+import { NewsCardType } from "../../../../redux/reducers/newsDataReducer/types";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { StoreType } from "../../../../redux/store";
@@ -16,10 +16,10 @@ interface NewsCardProps {
 export const SingleNews = () => {
 
     const params = useParams();
-    const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state);
+    const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state.newsDataCards);
     console.log("newsData", newsData)
 
-    const { loading, error} = useSelector((state: StoreType) => state);
+    const { loading, error} = useSelector((state: StoreType) => state.newsDataCards);
 
     // console.log("ALL_ARRAY", allArrDataNews)
 

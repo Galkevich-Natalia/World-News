@@ -13,16 +13,15 @@ import {
 } from './styledLoginForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { ThemeContext } from '../../../themeContext/themeContext';
 import { ThemeContextType } from '../../../themeContext/types';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export const LoginForm = () => {
 
     const [showPassword, setShowPassword] = React.useState(false);
     const themeContext = useContext<ThemeContextType>(ThemeContext);
-    const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -38,10 +37,19 @@ export const LoginForm = () => {
         }
     });
 
-    const onSubmit = (data: any) => console.log("DataFromLogin", data);
-    console.log(errors);
-
-    const handleOnSignUp = () => navigate("/signup");
+    const onSubmit = (data: any) => {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, data.email, data.password)
+        .then((userCredential) => {
+            console.log("login", userCredential)
+            const user = userCredential.user;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log("login_error", error)
+        });
+    };
 
     return (
         <Container >
@@ -52,7 +60,7 @@ export const LoginForm = () => {
                 <Description>
                     <p>Welcome back! Please enter your details</p>
                 </Description>
-                <FormControl onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <ContainerTextField>
                         <TextField
                             {...register("email", {
@@ -74,7 +82,7 @@ export const LoginForm = () => {
                             }}
                             // size="small"
                             error={!!errors.email}
-                            
+
                         />
                         {errors.email && (
                             <ErrorInput>{errors.email.message}</ErrorInput>
@@ -130,6 +138,7 @@ export const LoginForm = () => {
                     </ContainerFormControl>
                     <ContainerBtn>
                         <Button
+                            type="submit"
                             variant="contained"
                             sx={{ width: "100%", textTransform: "none" }}
                         >Sign in
@@ -137,13 +146,12 @@ export const LoginForm = () => {
                     </ContainerBtn>
                     <ContainerText>
                         <TextAboutSignUp>Don't have an account? {' '}
-                            <LinkOnSignUp
-                                onClick={handleOnSignUp}>
+                            <LinkOnSignUp>
                                 Sign up
                             </LinkOnSignUp>
                         </TextAboutSignUp>
                     </ContainerText>
-                </FormControl>
+                </form>
             </Wrapper>
         </Container>
     );

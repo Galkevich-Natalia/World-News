@@ -6,7 +6,7 @@ import { News } from './components/ui/news/news';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from './redux/store';
 import { useEffect } from 'react';
-import { fetchNews } from './redux/reducers/newsDataReducer';
+import { fetchNews } from './redux/reducers/newsDataReducer/newsDataReducer';
 import { FilterNews } from './components/ui/filterNews/filterNews';
 import { Footer } from './components/general/components/footer/footer';
 import { About } from './components/ui/about/about';
@@ -22,7 +22,7 @@ import { ThemeContextProvider } from './themeContext/themeContext';
 
 function App() {
 
-  const newsDataFromRedux = useSelector((state: StoreType) => state.newsData);
+  const newsDataFromRedux = useSelector((state: StoreType) => state.newsDataCards.newsData);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {

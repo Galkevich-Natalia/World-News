@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { StoreType } from "../../../redux/store";
 import { NewsCard } from "../news/newsCard";
-import { NewsCardType } from "../../../redux/reducers/types";
+import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
 import { v4 as uuidv4 } from 'uuid';
 
 export const SearchPage = () => {
@@ -17,7 +17,7 @@ export const SearchPage = () => {
         setSearchValue(event?.target.value)
     }
 
-    const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state)
+    const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state.newsDataCards)
 
     const allArrayData = [...newsData, ...newsDataByCategory]
 

@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { Container, Img, ImgContainer, TextContainer, TextElements, Title, Wrapper } from "./styledNewsCard";
-import { NewsCardType } from "../../../redux/reducers/types";
+import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../../../themeContext/themeContext";

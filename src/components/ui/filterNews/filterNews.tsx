@@ -5,11 +5,11 @@ import { AppDispatch, StoreType } from "../../../redux/store";
 
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer";
+import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer/newsDataReducer";
 import { RenderCards } from "./components/renderCards/renderCards";
 
 export const FilterNews = () => {
-    const { loading } = useSelector((state: StoreType) => state);
+    const { loading } = useSelector((state: StoreType) => state.newsDataCards);
 
     const dispatch = useDispatch<AppDispatch>();
     const { category } = useParams();

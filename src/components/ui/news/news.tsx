@@ -8,8 +8,8 @@ import { ErrorMessage } from "../../general/components/errorMessage/errorMessage
 
 export const News = () => {
 
-    const news = useSelector((state: StoreType) => state.newsData);
-    const { loading, error } = useSelector((state: StoreType) => state);
+    const news = useSelector((state: StoreType) => state.newsDataCards.newsData);
+    const { loading, error } = useSelector((state: StoreType) => state.newsDataCards);
 
     if (loading) {
         return <CircularProgress color="secondary" />;
