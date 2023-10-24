@@ -30,12 +30,13 @@ export const Header = () => {
                     < Title />
                     <InfoContainer>
                         < ToggleButtonTheme />
-                        {showContentWhenUserAuth ? null : (
+                        {!showContentWhenUserAuth ?
                             <>
-                                <BtnLogin />
-                                <BtnSignUp />
+                                < BtnLogin />
+                                < BtnSignUp />
                             </>
-                        )}
+                            : null
+                        }
                         {showContentWhenUserAuth ? < BtnUser setShowModalUser={setShowModalUser} /> : null}
                         < BtnSearch />
                     </InfoContainer>
