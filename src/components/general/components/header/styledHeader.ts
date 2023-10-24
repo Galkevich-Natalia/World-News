@@ -11,6 +11,7 @@ export const WrapperHeader = styled.div`
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 `;
 
 export const TopHeader = styled.div`

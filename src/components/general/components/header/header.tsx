@@ -8,17 +8,19 @@ import { BtnSearch } from "./components/btnSearch/btnSearch";
 import { NavMenu } from "./components/navMenu/navMenu";
 import { useContext, useEffect, useState } from "react";
 import { AuthorizedContext, AuthorizedContextType } from "contexts/authContext/authContext";
+import { BtnUser } from "./components/btnUser/btnUser";
+import { ModalUser } from "./components/modalUser/modalUser";
 
 export const Header = () => {
 
     // console.log("auth_context", isAuthorized)
-
-    const [visibleBtns, setvisibleBtns] = useState<boolean>(false);
-
     const { isAuthorized } = useContext<AuthorizedContextType>(AuthorizedContext)
 
+    const [showContentWhenUserAuth, setShowContentWhenUserAuth] = useState<boolean>(false);
+    const [showModalUser, setShowModalUser] = useState<boolean>(false);
+
     useEffect(() => {
-        setvisibleBtns(isAuthorized)
+        setShowContentWhenUserAuth(isAuthorized)
     }, [isAuthorized])
 
     return (
@@ -28,17 +30,18 @@ export const Header = () => {
                     < Title />
                     <InfoContainer>
                         < ToggleButtonTheme />
-                        {!visibleBtns ?
+                        {showContentWhenUserAuth ? null : (
                             <>
-                                < BtnLogin />
-                                < BtnSignUp />
+                                <BtnLogin />
+                                <BtnSignUp />
                             </>
-                            : null
-                        }
+                        )}
+                        {showContentWhenUserAuth ? < BtnUser setShowModalUser={setShowModalUser} /> : null}
                         < BtnSearch />
                     </InfoContainer>
                 </TopHeader>
                 < NavMenu />
+                {showModalUser ? < ModalUser closeModal={setShowModalUser} /> : null}
             </WrapperHeader>
         </ContainerHeader >
     )

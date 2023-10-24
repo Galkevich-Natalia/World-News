@@ -1,5 +1,6 @@
 import { isAuth } from "helpers/isAuth/isAuth";
 import { createContext, useEffect, useState } from "react";
+import { removeUserDataFromStorage } from "store/userStore/userStore";
 
 export interface AuthorizedContextType {
     isAuthorized: boolean;
@@ -13,8 +14,8 @@ interface BodyProps {
 
 const initialAuthContext: AuthorizedContextType = {
     isAuthorized: false,
-    loginF: () => {},
-    logoutF: () => {}
+    loginF: () => { },
+    logoutF: () => { }
 }
 
 export const AuthorizedContext = createContext<AuthorizedContextType>(initialAuthContext);
@@ -34,6 +35,7 @@ export const AuthorizedContextProvider = ({ children }: BodyProps) => {
 
     const logOut = () => {
         setIsUserAuth(false);
+        removeUserDataFromStorage();
     };
 
     return (

@@ -10,3 +10,7 @@ export const getUserDataFromStorage = () => {
         return null;
     }
 }
+
+export const removeUserDataFromStorage = () => {
+    localStorage.removeItem("userData")
+}
