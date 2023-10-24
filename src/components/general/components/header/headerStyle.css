@@ -1,7 +1,10 @@
 
-.activ-link-class {
+.active-link-class {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
     text-decoration: none;
-    border-bottom: 2px solid #f30a0a;
+    border-bottom: 5px solid #f30a0a;
 }
 
 .navLink {
@@ -12,7 +15,7 @@
 }
 
 .link-home:hover {
-    text-decoration: none;
+    /* text-decoration: none; */
     border-bottom: 5px solid #f30a0a;
 }
 
