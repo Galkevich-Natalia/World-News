@@ -1,8 +1,7 @@
-import { useSelector } from "react-redux";
-import { StoreType } from "redux/store";
+import { getUserDataFromStorage } from "store/userStore/userStore";
 
 export function useAuth() {
-    const { email, token, id } = useSelector((state: StoreType) => state.userData);
+    const { email, token, id } = getUserDataFromStorage()
 
     return {
         isAuth: !!email,

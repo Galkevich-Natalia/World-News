@@ -6,8 +6,8 @@ import { ContainerImg, ContainerSingleCard, Img, TextBody, TitleNews } from "./s
 import { useContext, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { ErrorMessage } from "../../../general/components/errorMessage/errorMessage";
-import { ThemeContext } from "../../../../themeContext/themeContext";
-import { ThemeContextType } from "../../../../themeContext/types";
+import { ThemeContext } from "../../../../contexts/themeContext/themeContext";
+import { ThemeContextType } from "../../../../contexts/themeContext/types";
 
 interface NewsCardProps {
     dataNews: NewsCardType;

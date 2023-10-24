@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ThemeContextStyleProps } from "../../../../../themeContext/types";
+import { ThemeContextStyleProps } from "../../../../../contexts/themeContext/types";
 
 export const ContainerPagination = styled.div<ThemeContextStyleProps>`
     display: flex;

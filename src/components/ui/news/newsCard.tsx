@@ -3,8 +3,8 @@ import { Container, Img, ImgContainer, TextContainer, TextElements, Title, Wrapp
 import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ThemeContext } from "../../../themeContext/themeContext";
-import { ThemeContextType } from "../../../themeContext/types";
+import { ThemeContext } from "../../../contexts/themeContext/themeContext";
+import { ThemeContextType } from "../../../contexts/themeContext/types";
 
 
 interface NewsCardProps {

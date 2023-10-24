@@ -14,15 +14,20 @@ import {
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
 import { useContext } from 'react';
-import { ThemeContext } from '../../../themeContext/themeContext';
-import { ThemeContextType } from '../../../themeContext/types';
+import { ThemeContext } from '../../../contexts/themeContext/themeContext';
+import { ThemeContextType } from '../../../contexts/themeContext/types';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { setUserDataToStorage } from 'store/userStore/userStore';
+import { useNavigate } from 'react-router-dom';
+import { AuthorizedContext, AuthorizedContextType } from 'contexts/authContext/authContext';
 
 export const SignUpForm = () => {
 
     const [showPassword, setShowPassword] = React.useState(false);
     const [showRepeatPassword, setShowRepeatPassword] = React.useState(false);
     const themeContext = useContext<ThemeContextType>(ThemeContext);
+    const { loginF } = useContext<AuthorizedContextType>(AuthorizedContext)
+    const navigate = useNavigate();
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleClickShowRepeatPassword = () => setShowRepeatPassword((show) => !show);
@@ -44,10 +49,13 @@ export const SignUpForm = () => {
     const onSubmit = (data: any) => {
         console.log("DATA", data)
         const auth = getAuth();
+        console.log("Auth", auth)
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
                 console.log("registration", userCredential)
-                const user = userCredential.user;
+                setUserDataToStorage(userCredential.user)
+                navigate("/");
+                loginF()
             })
             .catch((error) => {
                 const errorCode = error.code;

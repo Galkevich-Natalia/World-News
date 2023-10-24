@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { NewsCardType } from "../../../../../redux/reducers/newsDataReducer/types";
-import { ThemeContext } from "../../../../../themeContext/themeContext";
-import { ThemeContextType } from "../../../../../themeContext/types";
+import { ThemeContext } from "../../../../../contexts/themeContext/themeContext";
+import { ThemeContextType } from "../../../../../contexts/themeContext/types";
 import { ContainerPagination } from "./styledRenderCards";
 
 export const RenderCards = () => {

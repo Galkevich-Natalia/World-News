@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ThemeContextStyleProps } from "../../../themeContext/types";
+import { ThemeContextStyleProps } from "../../../contexts/themeContext/types";
 
 export const Container = styled.div`
     border-bottom: 3px dotted black;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ThemeContextType, themeType } from "./types";
 import { Themes } from "./themes";
-import { getThemeToLocalStorage, setThemeToLocalStorage } from "../store/themeStore/themeStore";
+import { getThemeToLocalStorage, setThemeToLocalStorage } from "../../store/themeStore/themeStore";
 
 const initialThemeContext: ThemeContextType = {
     currentTheme: "light",

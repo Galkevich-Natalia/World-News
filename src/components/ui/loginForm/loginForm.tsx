@@ -14,14 +14,20 @@ import {
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
 import { useContext } from 'react';
-import { ThemeContext } from '../../../themeContext/themeContext';
-import { ThemeContextType } from '../../../themeContext/types';
+import { ThemeContext } from '../../../contexts/themeContext/themeContext';
+import { ThemeContextType } from '../../../contexts/themeContext/types';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { setUserDataToStorage } from 'store/userStore/userStore';
+import { useNavigate } from 'react-router-dom';
+import { AuthorizedContext, AuthorizedContextType } from 'contexts/authContext/authContext';
 
 export const LoginForm = () => {
 
     const [showPassword, setShowPassword] = React.useState(false);
     const themeContext = useContext<ThemeContextType>(ThemeContext);
+    const { loginF } = useContext<AuthorizedContextType>(AuthorizedContext)
+    const navigate = useNavigate();
+
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -42,7 +48,9 @@ export const LoginForm = () => {
         signInWithEmailAndPassword(auth, data.email, data.password)
         .then((userCredential) => {
             console.log("login", userCredential)
-            const user = userCredential.user;
+            setUserDataToStorage(userCredential.user)
+            navigate("/");
+            loginF()
         })
         .catch((error) => {
             const errorCode = error.code;
