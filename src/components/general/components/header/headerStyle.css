@@ -1,3 +1,10 @@
+.navLink {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 5px solid transparent;
+}
+
 
 .active-link-class {
     color: white;
@@ -7,49 +14,68 @@
     border-bottom: 5px solid #f30a0a;
 }
 
-.navLink {
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
-    border-bottom: 5px solid transparent;
+
+.active-link-home {
+    border-bottom: 5px solid #f30a0a;
 }
 
+.active-link-society {
+    border-bottom: 5px solid #14b629;
+}
+
+.active-link-business {
+    border-bottom: 5px solid #f97f05;
+}
+
+.active-link-science {
+    border-bottom: 5px solid #0a7ef3;
+}
+
+.active-link-arts {
+    border-bottom: 5px solid #dc0af3;
+}
+
+.active-link-sports {
+    border-bottom: 5px solid #f5f10a;
+}
+
+.active-link-health {
+    border-bottom: 5px solid #0af3eb;
+}
+
+.active-link-games {
+    border-bottom: 5px solid #4c0af3;
+}
+
+
 .link-home:hover {
-    /* text-decoration: none; */
     border-bottom: 5px solid #f30a0a;
 }
 
 .link-society:hover {
-    text-decoration: none;
     border-bottom: 5px solid #14b629;
 }
 
 .link-business:hover {
-    text-decoration: none;
     border-bottom: 5px solid #f97f05;
 }
 
 .link-science:hover {
-    text-decoration: none;
     border-bottom: 5px solid #0a7ef3;
 }
 
 .link-arts:hover {
-    text-decoration: none;
     border-bottom: 5px solid #dc0af3;
 }
 
 .link-sports:hover {
-    text-decoration: none;
-    border-bottom: 5px solid hsl(59, 92%, 50%);
+    border-bottom: 5px solid #f5f10a;
 }
 
 .link-health:hover {
-    text-decoration: none;
     border-bottom: 5px solid #0af3eb;
 }
 
 .link-games:hover {
-    text-decoration: none;
     border-bottom: 5px solid #4c0af3;
 }

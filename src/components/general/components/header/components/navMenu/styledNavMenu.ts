@@ -1,14 +1,7 @@
 import { styled } from "styled-components";
 
-export const ItemContainer = styled.div`
-    padding: 15px 0;
+export const ItemContainer = styled.ul`
+    padding: 15px 0 !important;
     display: flex;
     justify-content: space-between;
 `;
-
-// export const StyleNavLink = styled(NavLink)`
-//     color: white;
-//     font-size: 20px;
-//     font-weight: 500;
-//     border-bottom: 5px solid transparent;
-// `;
