@@ -3,7 +3,6 @@ import { styled } from "styled-components";
 
 export const ContainerFooter = styled.div`
     background-color: black;
-    
     padding: 0 15px;
 `;
 

@@ -5,6 +5,7 @@ export const ContainerContactUs = styled.div`
     max-width: 950px;
     width: 100%;
     margin: 0 auto;
+    min-height: 60vh;
 `;
 
 export const Wrapper = styled.div`

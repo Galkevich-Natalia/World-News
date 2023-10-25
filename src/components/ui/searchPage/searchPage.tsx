@@ -31,7 +31,7 @@ export const SearchPage = () => {
     }
 
     return (
-        <ContainerSearch style={{ minHeight: "53vh" }}>
+        <ContainerSearch>
             <div>
                 <label>
                     <Input

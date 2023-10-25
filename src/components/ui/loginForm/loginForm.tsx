@@ -60,7 +60,7 @@ export const LoginForm = () => {
     };
 
     return (
-        <Container >
+        <Container>
             <Wrapper themestyles={themeContext.themeStyles} >
                 <ContainerTitle>
                     <Title>Sign in</Title>

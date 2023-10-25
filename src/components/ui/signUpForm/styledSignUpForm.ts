@@ -3,6 +3,7 @@ import { ThemeContextStyleProps } from "../../../contexts/themeContext/types";
 
 export const Container = styled.div`
     padding: 50px 15px;
+    min-height: 60vh;
 `;
 
 export const Wrapper = styled.div<ThemeContextStyleProps>`

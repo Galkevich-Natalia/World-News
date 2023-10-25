@@ -6,6 +6,7 @@ export const ContainerAbout = styled.div`
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    min-height: 60vh;
 `;
 
 export const Wrapper = styled.div`

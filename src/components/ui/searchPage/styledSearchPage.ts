@@ -5,6 +5,7 @@ export const ContainerSearch = styled.div`
     margin: 30px auto;
     max-width: 850px;
     width: 100%;
+    min-height: 60vh;
 `;
 
 export const Input = styled.input`

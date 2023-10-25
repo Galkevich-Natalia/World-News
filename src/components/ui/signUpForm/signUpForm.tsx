@@ -65,7 +65,7 @@ export const SignUpForm = () => {
     };
 
 return (
-    <Container >
+    <Container>
         <Wrapper themestyles={themeContext.themeStyles}>
             <ContainerTitle>
                 <Title>Sign up</Title>

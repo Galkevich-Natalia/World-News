@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer/newsDataReducer";
 import { RenderCards } from "./components/renderCards/renderCards";
+import { Container } from "./styledFilterNews";
 
 export const FilterNews = () => {
     const { loading } = useSelector((state: StoreType) => state.newsDataCards);
@@ -19,11 +20,11 @@ export const FilterNews = () => {
     }, [category]);
 
     return (
-        <div style={{ minHeight: "31.7vw" }}>
+        <Container>
             {loading ?
                 <CircularProgress color="secondary" />
                 : < RenderCards />
             }
-        </div >
+        </Container>
     );
 };
