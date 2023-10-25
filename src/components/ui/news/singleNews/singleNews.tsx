@@ -45,7 +45,7 @@ export const SingleNews = () => {
         <ContainerSingleCard>
             {error && <ErrorMessage errorText={error} />}
             {findCard ?
-                <div>
+                <>
                     <div>
                         <TitleNews themestyles={themeContext.themeStyles} >{findCard?.title}</TitleNews>
                     </div>
@@ -55,7 +55,7 @@ export const SingleNews = () => {
                     <div>
                         <TextBody themestyles={themeContext.themeStyles} >{findCard?.body}</TextBody>
                     </div>
-                </div>
+                </>
                 : null
             }
         </ContainerSingleCard>

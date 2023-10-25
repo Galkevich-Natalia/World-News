@@ -19,14 +19,13 @@ export const TextBody = styled.p<ThemeContextStyleProps>`
 `;
 
 export const ContainerImg = styled.div`
-    max-width: 100%;
     width: 100%;
-    margin: 50px auto 50px auto;
+    max-height: 500px;
+    margin: 50px 0;
     display: flex;
-    justyfy-content: center;
-    align-item: center;
 `;
 
 export const Img = styled.img`
     width: 100%;
+    object-fit: cover;
 `;
