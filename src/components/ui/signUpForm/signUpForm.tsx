@@ -9,7 +9,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
     Container, ContainerBtn, ContainerFormControl, ContainerTextField,
-    ContainerTitle, ErrorInput, Title, Wrapper
+    ContainerTitle, ErrorInput, Form, Title, Wrapper
 } from './styledSignUpForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
@@ -70,7 +70,7 @@ return (
             <ContainerTitle>
                 <Title>Sign up</Title>
             </ContainerTitle>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <ContainerTextField>
                     <TextField
                         {...register("userName", {
@@ -222,7 +222,7 @@ return (
                     >Sign up
                     </Button>
                 </ContainerBtn>
-            </form>
+            </Form>
         </Wrapper>
     </Container>
 );

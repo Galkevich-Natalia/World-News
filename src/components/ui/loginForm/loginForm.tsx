@@ -9,7 +9,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import {
     Container, ContainerBtn, ContainerFormControl, ContainerText, ContainerTextField,
-    ContainerTitle, Description, ErrorInput, LinkOnSignUp, TextAboutSignUp, Title, Wrapper
+    ContainerTitle, Description, ErrorInput, Form, LinkOnSignUp, TextAboutSignUp, Title, Wrapper
 } from './styledLoginForm';
 import { useForm } from 'react-hook-form';
 import { Button } from '@mui/material';
@@ -63,12 +63,12 @@ export const LoginForm = () => {
         <Container>
             <Wrapper themestyles={themeContext.themeStyles} >
                 <ContainerTitle>
-                    <Title>Sign in</Title>
+                    <Title>Log in</Title>
                 </ContainerTitle>
                 <Description>
                     <p>Welcome back! Please enter your details</p>
                 </Description>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <Form onSubmit={handleSubmit(onSubmit)}>
                     <ContainerTextField>
                         <TextField
                             {...register("email", {
@@ -149,17 +149,17 @@ export const LoginForm = () => {
                             type="submit"
                             variant="contained"
                             sx={{ width: "100%", textTransform: "none" }}
-                        >Sign in
+                        >Log in
                         </Button>
                     </ContainerBtn>
                     <ContainerText>
                         <TextAboutSignUp>Don't have an account? {' '}
-                            <LinkOnSignUp>
+                            <LinkOnSignUp to={"/signup"}>
                                 Sign up
                             </LinkOnSignUp>
                         </TextAboutSignUp>
                     </ContainerText>
-                </form>
+                </Form>
             </Wrapper>
         </Container>
     );

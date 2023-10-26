@@ -13,9 +13,10 @@ export const Wrapper = styled.div<ThemeContextStyleProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: ${({themestyles}) => `2px solid ${themestyles.color}` };
+    // border: ${({themestyles}) => `2px solid ${themestyles.color}` };
     padding: 50px;
     background-color: ${({themestyles}) => themestyles.backgroundForm };
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
 
     @media screen and (max-width: 500px) {
         padding: 40px 30px;
@@ -34,6 +35,10 @@ export const Title = styled.h2`
     @media screen and (max-width: 500px) {
         font-size: 28px;
     }
+`;
+
+export const Form = styled.form`
+    width: 100%;
 `;
 
 export const ContainerTextField = styled.div`

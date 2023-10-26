@@ -4,13 +4,15 @@ export enum Colors {
     WHITE = "#FFFFFF",
     BLACK = "#000000",
     DARKGREY = "#3c4556",
-    TRANSPARENT = "transparent"
+    TRANSPARENT = "transparent",
+    GREY = "rgba(0, 0, 0, 0.5)"
 }
 
 export interface Theme {
     body: Colors,
     color: Colors,
-    backgroundForm: Colors
+    backgroundForm: Colors,
+    shapeForm: Colors
 }
 
 export type ThemesType = Record<themeType, Theme>;

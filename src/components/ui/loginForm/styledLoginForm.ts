@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { ThemeContextStyleProps } from "../../../contexts/themeContext/types";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 50px 15px;
@@ -13,10 +14,12 @@ export const Wrapper = styled.div<ThemeContextStyleProps>`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #1976d2;
-    border: ${({themestyles}) => `2px solid ${themestyles.color}` };
+    // border: ${({themestyles}) => `2px solid ${themestyles.color}` }
     padding: 50px;
     background-color: ${({themestyles}) => themestyles.backgroundForm };
+    // box-shadow: ${({themestyles}) => `10px 10px 10px ${themestyles.shapeForm}` };
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
+
     @media screen and (max-width: 500px) {
         padding: 40px 30px;
     }    
@@ -39,6 +42,10 @@ export const Title = styled.h2`
 export const Description = styled.div`
     text-align: center;
     color: black;
+`;
+
+export const Form = styled.form`
+    width: 100%;
 `;
 
 export const ContainerTextField = styled.div`
@@ -79,7 +86,8 @@ export const TextAboutSignUp = styled.p`
     text-align: center;
 `;
 
-export const LinkOnSignUp = styled.a`
+export const LinkOnSignUp = styled(Link)`
     font-weight: 700;
+    color: #1976d2;
     cursor: pointer;
 `;
