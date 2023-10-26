@@ -20,6 +20,7 @@ import { SearchPage } from './components/ui/searchPage/searchPage';
 import { Body } from './components/ui/body/body';
 import { ThemeContextProvider } from './contexts/themeContext/themeContext';
 import { AuthorizedContextProvider } from 'contexts/authContext/authContext';
+import { Empty } from 'components/ui/empty/empty';
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/contactUs" element={< ContactUs />} />
                 <Route path="/help" element={< Help />} />
                 <Route path="/privacyPolicy" element={< PrivacyPolicy />} />
+                <Route path="*" element={< Empty />} />
               </Routes>
               < Footer />
             </Body>
