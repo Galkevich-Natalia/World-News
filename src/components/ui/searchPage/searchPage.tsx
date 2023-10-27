@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { StoreType } from "../../../redux/store";
-import { NewsCard } from "../news/newsCard";
+import { NewsCard } from "../../general/components/newsCard/newsCard";
 import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
 import { v4 as uuidv4 } from 'uuid';
 

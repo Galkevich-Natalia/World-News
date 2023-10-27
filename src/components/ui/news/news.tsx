@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { NewsCard } from "./newsCard";
+import { NewsCard } from "../../general/components/newsCard/newsCard";
 import { v4 as uuidv4 } from 'uuid';
 import { CircularProgress, Link } from "@mui/material";
 import { StoreType } from "../../../redux/store";

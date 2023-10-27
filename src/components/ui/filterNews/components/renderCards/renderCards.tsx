@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { StoreType } from "../../../../../redux/store";
 import { ErrorMessage } from "../../../../general/components/errorMessage/errorMessage";
-import { NewsCard } from "../../../news/newsCard";
+import { NewsCard } from "../../../../general/components/newsCard/newsCard";
 import { v4 as uuidv4 } from 'uuid';
 import { Pagination } from "@mui/material";
 import { useContext, useEffect, useState } from "react";

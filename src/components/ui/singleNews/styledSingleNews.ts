@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { ThemeContextStyleProps } from "../../../../contexts/themeContext/types";
+import { ThemeContextStyleProps } from "../../../contexts/themeContext/types";
 
 export const ContainerSingleCard = styled.div`
     padding: 20px;

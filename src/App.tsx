@@ -13,7 +13,7 @@ import { About } from './components/ui/about/about';
 import { ContactUs } from './components/ui/contactUs/contactUs';
 import { Help } from './components/ui/help/help';
 import { PrivacyPolicy } from './components/ui/privacyPolicy/privacyPolicy';
-import { SingleNews } from './components/ui/news/singleNews/singleNews';
+import { SingleNews } from './components/ui/singleNews/singleNews';
 import { LoginForm } from './components/ui/loginForm/loginForm';
 import { SignUpForm } from './components/ui/signUpForm/signUpForm';
 import { SearchPage } from './components/ui/searchPage/searchPage';

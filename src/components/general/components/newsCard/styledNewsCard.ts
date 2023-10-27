@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Theme, ThemeContextStyleProps } from "../../../contexts/themeContext/types";
+import { Theme, ThemeContextStyleProps } from "../../../../contexts/themeContext/types";
 import { Link } from "react-router-dom";
 
 interface CardStyleProps {
