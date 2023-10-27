@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { ItemContainer } from "./styledNavMenu";
+import { ContainerItems } from "./styledNavMenu";
 
 export const NavMenu = () => {
     return (
-        <ItemContainer>
+        <ContainerItems>
             <li>
                 <NavLink
                     to="/"
@@ -68,6 +68,6 @@ export const NavMenu = () => {
                     Games
                 </NavLink>
             </li>
-        </ItemContainer>
+        </ContainerItems>
     );
 };
