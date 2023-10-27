@@ -18,10 +18,19 @@ export const TopHeader = styled.div`
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid white;
+
+    @media screen and (max-width: 640px) {
+        flex-direction: column;
+    }
 `;
 
 export const InfoContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 640px) {
+       margin-bottom: 15px;
+       justify-content: space-around;
+    }
 `;
