@@ -20,6 +20,10 @@ export const TitleContainer = styled.div`
 export const Title = styled.h1`
     font-size: 35px;
     color: white;
+
+    @media screen and (max-width: 500px) {
+        font-size: 30px;
+    }
 `;
 
 export const ContainerInfoFooter = styled.div`
@@ -29,6 +33,12 @@ export const ContainerInfoFooter = styled.div`
 export const ListInfoFooter = styled.ul`
     display: flex;
     justify-content: space-around;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const ItemInfoFooter = styled(Link)`
@@ -42,8 +52,7 @@ export const CopyrightFooter = styled.div`
     padding-bottom: 10px;
 `;
 
-export const ItemCopyrightFooter = styled.p`
-    font-size: 15px;
+export const ItemCopyrightFooter = styled.span`
+    font-size: 13px;
     color: white;
-    cursor: pointer;
 `;
