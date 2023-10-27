@@ -7,7 +7,7 @@ export const ContainerFooter = styled.div`
 `;
 
 export const WrapperFooter = styled.div`
-    max-width: 1140px;
+    max-width: 1110px;
     width: 100%;
     margin: 0 auto;
 `;
@@ -45,6 +45,13 @@ export const ItemInfoFooter = styled(Link)`
     font-size: 20px;
     color: white;
     cursor: pointer;
+
+    @media screen and (max-width: 500px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+    }
 `;
 
 export const CopyrightFooter = styled.div`

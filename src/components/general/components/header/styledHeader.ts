@@ -8,7 +8,7 @@ export const ContainerHeader = styled.header`
 `;
 
 export const WrapperHeader = styled.div`
-    max-width: 1140px;
+    max-width: 1110px;
     width: 100%;
     margin: 0 auto;
     position: relative;

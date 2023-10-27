@@ -3,6 +3,10 @@ import { ThemeContextStyleProps } from "../../../../../contexts/themeContext/typ
 
 export const ContainerCards = styled.div`
     min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ContainerPagination = styled.div<ThemeContextStyleProps>`

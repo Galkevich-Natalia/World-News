@@ -10,10 +10,14 @@ export const ContainerModal = styled.div`
     position: fixed;
     border: 2px solid black;
     z-index: 3;
+
+    @media screen and (max-width: 460px) {
+        max-width: 100%;
+    }
 `;
 
 export const Wrapper = styled.div`
-    padding: 20px 40px;
+    padding: 40px;
 `;
 
 export const ContTitle = styled.div`

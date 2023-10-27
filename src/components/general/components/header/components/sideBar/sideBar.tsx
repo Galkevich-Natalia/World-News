@@ -16,7 +16,7 @@ export const SideBar = ({ setShowSideBar }: SideBarProps) => {
             <Wrapper>
                 <ContBtnCLose>
                     <button onClick={closeSideBar}>
-                        <FontAwesomeIcon icon={faXmark} color="white" />
+                        <FontAwesomeIcon icon={faXmark} color="white" size="xl"/>
                     </button>
                 </ContBtnCLose>
                 <ContTitle>
