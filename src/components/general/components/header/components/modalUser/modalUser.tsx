@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { AuthorizedContext, AuthorizedContextType } from "contexts/authContext/authContext";
 import { useContext } from "react";
 import { getUserDataFromStorage } from "store/userStore/userStore";
-import { ContBtnCLose, ContTitle, ContainerBtnLogOut, ContainerModal } from "./styledModalUser";
+import { ContBtnCLose, ContTitle, ContainerBtnLogOut, ContainerModal, DataUser } from "./styledModalUser";
 
 interface ModalUserProps {
     closeModal: (value: boolean) => void;
@@ -28,14 +28,14 @@ export const ModalUser = ({ closeModal }: ModalUserProps) => {
         <ContainerModal>
             <ContBtnCLose>
                 <button onClick={() => closeModal(false)}>
-                    <FontAwesomeIcon icon={faXmark} />
+                    <FontAwesomeIcon icon={faXmark} size="lg"/>
                 </button>
             </ContBtnCLose>
             <ContTitle>
                 <h2>User account</h2>
             </ContTitle>
             <div>
-                <h3>E-mail: {dataUserFromStorage.email} </h3>
+                <h3>E-mail: <DataUser>{dataUserFromStorage.email}</DataUser> </h3>
             </div>
             <ContainerBtnLogOut>
                 <Button

@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const ContainerModal = styled.div`
     max-width: 365px;
     width: 100%;
-    padding: 20px 40px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +13,7 @@ export const ContainerModal = styled.div`
     background-color: white;
     position: absolute;
     border: 2px solid black;
+    z-index: 3;
 `;
 
 export const ContTitle = styled.div`
@@ -25,4 +26,8 @@ export const ContBtnCLose = styled.div`
 
 export const ContainerBtnLogOut = styled.div`
     margin: 40px 0 10px 0;
+`;
+
+export const DataUser = styled.span`
+    font-weight: 400;
 `;

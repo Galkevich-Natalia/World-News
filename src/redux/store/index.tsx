@@ -7,7 +7,6 @@ export const store = configureStore({
         newsDataCards: newsDataReducer,
         userData: userReducer,
     }
-    ,
 });
 
 export type StoreType = ReturnType<typeof store.getState>;

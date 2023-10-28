@@ -12,6 +12,12 @@ export const Input = styled.input`
     width: 100%;
     padding: 8px;
     border-radius: 5px;
+
+    &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        display: none;
+      }
 `;
 
 export const ButtonSearch = styled.button`
@@ -23,4 +29,8 @@ export const ButtonSearch = styled.button`
     bottom: 33px;
     height: 0;
     display: block;
+
+    @media screen and (max-width: 500px) {
+        left: 85%;
+    }
 `;

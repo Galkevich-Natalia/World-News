@@ -1,27 +1,26 @@
 import { useSelector } from "react-redux";
 import { NewsCard } from "../../general/components/newsCard/newsCard";
 import { v4 as uuidv4 } from 'uuid';
-import { CircularProgress, Link } from "@mui/material";
 import { StoreType } from "../../../redux/store";
-import { ErrorMessage } from "../../general/components/errorMessage/errorMessage";
 import { ContainerNews, WrapperNews } from "./styledNews";
+import { Loader } from "components/general/components/loader/loader";
 
 export const News = () => {
 
     const news = useSelector((state: StoreType) => state.newsDataCards.newsData);
-    const { loading, error } = useSelector((state: StoreType) => state.newsDataCards);
+    const { loading } = useSelector((state: StoreType) => state.newsDataCards);
 
-    if (loading) {
-        return <CircularProgress color="secondary" />;
-    };
+    const cutNews = news.slice(0, 10);
 
     return (
         <ContainerNews>
             <WrapperNews>
-                {/* {error && <ErrorMessage errorText={error} />} */}
-                {news.map((item: any) => (
-                    < NewsCard key={uuidv4()} dataNews={item} className="homeCard"/>
-                ))}
+                {loading ?
+                    < Loader />
+                    : cutNews.map((item) => (
+                        < NewsCard key={uuidv4()} dataNews={item} className="homeCard" />
+                    ))
+                }
             </WrapperNews>
         </ContainerNews>
     );

@@ -16,7 +16,5 @@ export const WrapperNews = styled.div`
     @media screen and (max-width: 640px) {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
     }
 `;
