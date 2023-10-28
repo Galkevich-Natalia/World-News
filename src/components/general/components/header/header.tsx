@@ -1,17 +1,10 @@
 import { ContainerHeader, WrapperHeader, TopHeader, InfoContainer } from "./styledHeader"
 import './headerStyle.css'
-import { Title } from "./components/title/title";
-import { ToggleButtonTheme } from "./components/toggleBtnTheme/toggleBtnTheme";
-import { BtnLogin } from "./components/btnLogin/btnLogin";
-import { BtnSignUp } from "./components/btnSignUp/btnSignUp";
-import { BtnSearch } from "./components/btnSearch/btnSearch";
-import { NavMenu } from "./components/navMenu/navMenu";
+
 import { useContext, useEffect, useState } from "react";
 import { AuthorizedContext, AuthorizedContextType } from "contexts/authContext/authContext";
-import { BtnUser } from "./components/btnUser/btnUser";
-import { ModalUser } from "./components/modalUser/modalUser";
-import { SideBar } from "./components/sideBar/sideBar";
-import { BtnBurgerMenu } from "./components/btnBurgerMenu/btnBurgerMenu";
+import { BtnBurgerMenu, BtnLogin, BtnSearch, BtnSignUp, BtnUser,
+    ModalUser, NavMenu, SideBar, Title, ToggleButtonTheme } from ".";
 
 export const Header = () => {
 

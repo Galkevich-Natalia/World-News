@@ -1,26 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import './assets/reset.css';
-import { Header } from './components/general/components/header/header';
-import { News } from './components/ui/news/news';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, StoreType } from './redux/store';
 import { useEffect } from 'react';
 import { fetchNews } from './redux/reducers/newsDataReducer/newsDataReducer';
-import { FilterNews } from './components/ui/filterNews/filterNews';
-import { Footer } from './components/general/components/footer/footer';
-import { About } from './components/ui/about/about';
-import { ContactUs } from './components/ui/contactUs/contactUs';
-import { Help } from './components/ui/help/help';
-import { PrivacyPolicy } from './components/ui/privacyPolicy/privacyPolicy';
-import { SingleNews } from './components/ui/singleNews/singleNews';
-import { LoginForm } from './components/ui/loginForm/loginForm';
-import { SignUpForm } from './components/ui/signUpForm/signUpForm';
-import { SearchPage } from './components/ui/searchPage/searchPage';
-import { Body } from './components/ui/body/body';
 import { ThemeContextProvider } from './contexts/themeContext/themeContext';
 import { AuthorizedContextProvider } from 'contexts/authContext/authContext';
-import { Empty } from 'components/ui/empty/empty';
+import { CheckAuthorizedUser } from 'helpers/privatePages/privatePages';
+import { About, Body, ContactUs, Empty, FilterNews, Footer, Header, Help,
+  LoginForm, News, PrivacyPolicy, SearchPage, SignUpForm, SingleNews } from 'components';
 
 function App() {
 
@@ -40,8 +29,18 @@ function App() {
               < Header />
               <Routes>
                 <Route path="/" element={< News />} />
-                <Route path="/signup" element={< SignUpForm />} />
-                <Route path="/login" element={< LoginForm />} />
+                <Route path="/signup" element={
+                  <CheckAuthorizedUser>
+                    < SignUpForm />
+                  </CheckAuthorizedUser>
+                }
+                />
+                <Route path="/login" element={
+                  <CheckAuthorizedUser>
+                    < LoginForm />
+                  </CheckAuthorizedUser>
+                }
+                />
                 <Route path="/category/:category" element={< FilterNews />} />
                 <Route
                   path="/news/:uri/editNews"
