@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { ContainerAbout, TextItem, Title, Wrapper } from "./styledAbout";
+
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+
+import { ContainerAbout, TextItem, Title, Wrapper } from "./styledAbout";
+
 
 export const About = () => {
 

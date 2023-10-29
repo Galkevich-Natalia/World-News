@@ -1,6 +1,7 @@
-import { AuthorizedContext } from "../../contexts/authContext/authContext";
 import { useContext } from "react";
 import { Navigate } from "react-router-dom";
+
+import { AuthorizedContext } from "../../contexts/authContext/authContext";
 
 interface CheckAuthorizedUserProps {
     children: JSX.Element;

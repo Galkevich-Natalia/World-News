@@ -1,9 +1,11 @@
+import { useContext } from "react"; 7
+
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material";
 import { AuthorizedContext, AuthorizedContextType } from "../../../../../../contexts/authContext/authContext";
-import { useContext } from "react";
 import { getUserDataFromStorage } from "../../../../../../store/userStore/userStore";
+
 import { ContBtnCLose, ContTitle, ContainerBtnLogOut, ContainerModal, DataUser } from "./styledModalUser";
 
 interface ModalUserProps {
@@ -27,7 +29,7 @@ export const ModalUser = ({ closeModal }: ModalUserProps) => {
         <ContainerModal>
             <ContBtnCLose>
                 <button onClick={() => closeModal(false)}>
-                    <FontAwesomeIcon icon={faXmark} size="lg"/>
+                    <FontAwesomeIcon icon={faXmark} size="lg" />
                 </button>
             </ContBtnCLose>
             <ContTitle>

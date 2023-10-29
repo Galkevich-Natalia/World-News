@@ -1,7 +1,9 @@
 import { Dispatch, SetStateAction } from "react";
-import { ContUser, UserBtn } from "./styledBtnUser";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+
+import { ContUser, UserBtn } from "./styledBtnUser";
 
 interface BtnUserProps {
     setShowModalUser: Dispatch<SetStateAction<boolean>>;

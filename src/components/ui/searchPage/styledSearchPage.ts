@@ -17,7 +17,7 @@ export const Input = styled.input`
         -webkit-appearance: none;
         appearance: none;
         display: none;
-      }
+    }
 `;
 
 export const ButtonSearch = styled.button`

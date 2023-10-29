@@ -1,15 +1,16 @@
 import { FC } from "react"
-import { CardLink, Container, Img, ImgContainer, TextContainer, TextElements, Title, Wrapper } from "./styledNewsCard";
-import { NewsCardType } from "../../../../redux/reducers/newsDataReducer/types";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
+
 import { ThemeContext } from "../../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../../contexts/themeContext/types";
+import { NewsCardType } from "../../../../redux/reducers/newsDataReducer/types";
+
+import { CardLink, Container, Img, ImgContainer, TextContainer, TextElements, Title, Wrapper } from "./styledNewsCard";
 
 
 interface NewsCardProps {
   dataNews: NewsCardType;
-  className?: string ;
+  className?: string;
 }
 
 export const NewsCard: FC<NewsCardProps> = ({ dataNews, className }) => {

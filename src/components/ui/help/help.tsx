@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { ContainerHelp, TextItem, Title, Wrapper } from "./styledHelp";
+
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+
+import { ContainerHelp, TextItem, Title, Wrapper } from "./styledHelp";
+
 
 export const Help = () => {
 

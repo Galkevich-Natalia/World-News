@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import { ContIconSearch, ItemInfo } from "./styledBtnSearch";
 
 export const BtnSearch = () => {

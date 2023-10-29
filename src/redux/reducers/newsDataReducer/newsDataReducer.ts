@@ -65,7 +65,7 @@ export const fetchNewsByCategory = createAsyncThunk<void, string>(
                 "articlesCount": 100,
                 "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
             });
-            
+
             const filteredNews = result.data.articles.results
                 .filter((item: NewsCardType) => item.image !== null)
                 .filter((element: NewsCardType, index: number, array: NewsCardType[]) => array.findIndex((el: NewsCardType) => el.title === element.title) === index);

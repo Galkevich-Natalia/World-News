@@ -1,15 +1,20 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
-import './assets/reset.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, StoreType } from './redux/store';
 import { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
+import {
+  About, Body, ContactUs, Empty, FilterNews, Footer, Header, Help,
+  LoginForm, News, PrivacyPolicy, SearchPage, SignUpForm, SingleNews
+} from './components';
+import { AppDispatch, StoreType } from './redux/store';
 import { fetchNews } from './redux/reducers/newsDataReducer/newsDataReducer';
 import { ThemeContextProvider } from './contexts/themeContext/themeContext';
 import { AuthorizedContextProvider } from './contexts/authContext/authContext';
 import { CheckAuthorizedUser } from './helpers/privatePages/privatePages';
-import { About, Body, ContactUs, Empty, FilterNews, Footer, Header, Help,
-  LoginForm, News, PrivacyPolicy, SearchPage, SignUpForm, SingleNews } from './components';
+
+import './App.css';
+import './assets/reset.css';
+
 
 function App() {
 

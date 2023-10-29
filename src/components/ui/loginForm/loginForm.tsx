@@ -1,25 +1,24 @@
 import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
+import { useContext } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+
+import {
+    Button, FormControl, IconButton, InputAdornment,
+    InputLabel, OutlinedInput, TextField
+} from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import {
-    Container, ContainerBtn, ContainerFormControl, ContainerText, ContainerTextField,
-    ContainerTitle, Description, ErrorInput, Form, LinkOnSignUp, TextAboutSignUp, Title, Wrapper
-} from './styledLoginForm';
-import { useForm } from 'react-hook-form';
-import { Button } from '@mui/material';
-import { useContext } from 'react';
 import { ThemeContext } from '../../../contexts/themeContext/themeContext';
 import { ThemeContextType } from '../../../contexts/themeContext/types';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { setUserDataToStorage } from '../../../store/userStore/userStore';
-import { useNavigate } from 'react-router-dom';
 import { AuthorizedContext, AuthorizedContextType } from '../../../contexts/authContext/authContext';
+
+import {
+    Container, ContainerBtn, ContainerFormControl, ContainerText, ContainerTextField,
+    ContainerTitle, Description, ErrorInput, Form, LinkOnSignUp, TextAboutSignUp, Title, Wrapper
+} from './styledLoginForm';
 
 export const LoginForm = () => {
 
@@ -46,15 +45,15 @@ export const LoginForm = () => {
     const onSubmit = (data: any) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, data.email, data.password)
-        .then((userCredential) => {
-            setUserDataToStorage(userCredential.user)
-            navigate("/");
-            loginF()
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-        });
+            .then((userCredential) => {
+                setUserDataToStorage(userCredential.user)
+                navigate("/");
+                loginF()
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
     };
 
     return (
@@ -97,7 +96,9 @@ export const LoginForm = () => {
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
                                 error={!!errors.password}
-                            >Password</InputLabel>
+                            >
+                                Password
+                            </InputLabel>
                             <OutlinedInput
                                 {...register("password", {
                                     required: 'The Password field is not filled in',

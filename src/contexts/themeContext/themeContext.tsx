@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { ThemeContextType, themeType } from "./types";
+
 import { Themes } from "./themes";
+import { ThemeContextType, themeType } from "./types";
 import { getThemeToLocalStorage, setThemeToLocalStorage } from "../../store/themeStore/themeStore";
+
 
 const initialThemeContext: ThemeContextType = {
     currentTheme: "light",
     themeStyles: Themes["light"],
     changeTheme: () => { }
 }
-
 interface BodyProps {
     children: React.ReactNode
 }

@@ -1,13 +1,16 @@
-import { useSelector } from "react-redux";
-import { StoreType } from "../../../../../redux/store";
-import { NewsCard } from "../../../../general/components/newsCard/newsCard";
-import { v4 as uuidv4 } from 'uuid';
-import { Pagination } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
+import { NewsCard } from "../../../../general/components/newsCard/newsCard";
 import { NewsCardType } from "../../../../../redux/reducers/newsDataReducer/types";
+import { StoreType } from "../../../../../redux/store";
 import { ThemeContext } from "../../../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../../../contexts/themeContext/types";
+import { v4 as uuidv4 } from 'uuid';
+import { Pagination } from "@mui/material";
+
 import { ContainerCards, ContainerPagination } from "./styledRenderCards";
+
 
 export const RenderCards = () => {
 

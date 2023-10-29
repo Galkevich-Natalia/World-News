@@ -1,9 +1,12 @@
 import { useSelector } from "react-redux";
+
 import { NewsCard } from "../../general/components/newsCard/newsCard";
-import { v4 as uuidv4 } from 'uuid';
 import { StoreType } from "../../../redux/store";
-import { ContainerNews, WrapperNews } from "./styledNews";
+import { v4 as uuidv4 } from 'uuid';
 import { Loader } from "../../general/components/loader/loader";
+
+import { ContainerNews, WrapperNews } from "./styledNews";
+
 
 export const News = () => {
 

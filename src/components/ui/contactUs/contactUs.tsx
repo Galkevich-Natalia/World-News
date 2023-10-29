@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { ContainerContactUs, TextItem, Title, Wrapper } from "./styledContactUs";
+
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+
+import { ContainerContactUs, TextItem, Title, Wrapper } from "./styledContactUs";
+
 
 export const ContactUs = () => {
 

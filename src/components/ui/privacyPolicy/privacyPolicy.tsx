@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { ContainerPrivacyPolice, TextItem, Title, Wrapper } from "./styledPrivacyPolicy";
+
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+
+import { ContainerPrivacyPolice, TextItem, Title, Wrapper } from "./styledPrivacyPolicy";
+
 
 export const PrivacyPolicy = () => {
 

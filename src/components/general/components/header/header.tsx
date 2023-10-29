@@ -1,10 +1,13 @@
+import { useContext, useEffect, useState } from "react";
+
+import { AuthorizedContext, AuthorizedContextType } from "../../../../contexts/authContext/authContext";
+import {
+    BtnBurgerMenu, BtnLogin, BtnSearch, BtnSignUp, BtnUser,
+    ModalUser, NavMenu, SideBar, Title, ToggleButtonTheme
+} from ".";
+
 import { ContainerHeader, WrapperHeader, TopHeader, InfoContainer } from "./styledHeader"
 import './headerStyle.css'
-
-import { useContext, useEffect, useState } from "react";
-import { AuthorizedContext, AuthorizedContextType } from "../../../../contexts/authContext/authContext";
-import { BtnBurgerMenu, BtnLogin, BtnSearch, BtnSignUp, BtnUser,
-    ModalUser, NavMenu, SideBar, Title, ToggleButtonTheme } from ".";
 
 export const Header = () => {
 

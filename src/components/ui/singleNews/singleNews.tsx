@@ -1,13 +1,14 @@
-import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+
+import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
 import { StoreType } from "../../../redux/store";
-import { ContainerImg, ContainerSingleCard, Img, TextBody, TitleNews } from "./styledSingleNews";
-import { useContext, useEffect, useState } from "react";
-import { CircularProgress } from "@mui/material";
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
 import { Loader } from "../../general/components/loader/loader";
+
+import { ContainerImg, ContainerSingleCard, Img, TextBody, TitleNews } from "./styledSingleNews";
 
 interface NewsCardProps {
     dataNews: NewsCardType;

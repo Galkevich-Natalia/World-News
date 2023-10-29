@@ -1,7 +1,9 @@
-import { ContBtnCLose, ContTitle, ContainerItems, ContainerModal, Item, Wrapper } from "./styledSideBar";
+import { NavLink } from "react-router-dom";
+
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
+
+import { ContBtnCLose, ContTitle, ContainerItems, ContainerModal, Item, Wrapper } from "./styledSideBar";
 
 interface SideBarProps {
     setShowSideBar: (value: boolean) => void
@@ -16,7 +18,7 @@ export const SideBar = ({ setShowSideBar }: SideBarProps) => {
             <Wrapper>
                 <ContBtnCLose>
                     <button onClick={closeSideBar}>
-                        <FontAwesomeIcon icon={faXmark} color="white" size="xl"/>
+                        <FontAwesomeIcon icon={faXmark} color="white" size="xl" />
                     </button>
                 </ContBtnCLose>
                 <ContTitle>

@@ -1,10 +1,13 @@
+import { useContext } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import { useContext } from "react";
-import { ContIconTheme, ThemeButton } from "./styledToggleBtnTheme";
 import { ThemeContext } from "../../../../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../../../../contexts/themeContext/types";
+
+import { ContIconTheme, ThemeButton } from "./styledToggleBtnTheme";
+
 
 export const ToggleButtonTheme = () => {
 

@@ -1,14 +1,14 @@
-import { CircularProgress } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, StoreType } from "../../../redux/store";
-
-
-import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer/newsDataReducer";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import { RenderCards } from "./components/renderCards/renderCards";
-import { Container } from "./styledFilterNews";
+import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer/newsDataReducer";
+import { AppDispatch, StoreType } from "../../../redux/store";
 import { Loader } from "../../general/components/loader/loader";
+
+import { Container } from "./styledFilterNews";
+
 
 export const FilterNews = () => {
     const { loading } = useSelector((state: StoreType) => state.newsDataCards);

@@ -4,6 +4,4 @@ export const ContIconTheme = styled.div`
     margin-right: 30px;
 `;
 
-export const ThemeButton = styled.button`
-
-`;
+export const ThemeButton = styled.button``;

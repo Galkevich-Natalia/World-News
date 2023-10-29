@@ -1,7 +1,9 @@
 import { useContext } from "react";
-import { ContainerBody } from "./styledBody";
+
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+
+import { ContainerBody } from "./styledBody";
 
 interface BodyProps {
     children: React.ReactNode

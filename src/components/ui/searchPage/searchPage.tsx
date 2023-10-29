@@ -1,12 +1,15 @@
-import { ButtonSearch, ContainerSearch, Input } from "./styledSearchPage";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { StoreType } from "../../../redux/store";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { NewsCard } from "../../general/components/newsCard/newsCard";
 import { NewsCardType } from "../../../redux/reducers/newsDataReducer/types";
+import { StoreType } from "../../../redux/store";
 import { v4 as uuidv4 } from 'uuid';
+
+import { ButtonSearch, ContainerSearch, Input } from "./styledSearchPage";
+
 
 export const SearchPage = () => {
 

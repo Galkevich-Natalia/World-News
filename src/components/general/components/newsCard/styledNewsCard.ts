@@ -1,6 +1,6 @@
-import { styled } from "styled-components";
-import { Theme, ThemeContextStyleProps } from "../../../../contexts/themeContext/types";
 import { Link } from "react-router-dom";
+import { Theme } from "../../../../contexts/themeContext/types";
+import { styled } from "styled-components";
 
 interface CardStyleProps {
     type?: string,
@@ -10,7 +10,6 @@ interface CardStyleProps {
 export const Container = styled.div<CardStyleProps>`
     border-bottom: ${(props) => props.type === 'homeCard' ? '0' : `3px dotted ${props.themestyles?.color}`};
     padding: 20px 0;
-    // margin: 30px auto;
     max-width: 850px;
     width: 100%;
 
