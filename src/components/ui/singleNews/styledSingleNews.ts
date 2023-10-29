@@ -11,6 +11,10 @@ export const ContainerSingleCard = styled.div`
 
 export const TitleNews = styled.h1<ThemeContextStyleProps>`
     color: ${({themestyles}) => themestyles.color };
+
+    @media screen and (max-width: 500px) {
+        font-size: 22px;
+    }
 `;
 
 export const TextBody = styled.p<ThemeContextStyleProps>`

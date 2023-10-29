@@ -5,6 +5,7 @@ export const ContainerPrivacyPolice = styled.div`
     max-width: 950px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 15px;
     min-height: 60vh;
 `;
 
@@ -19,6 +20,7 @@ export const Title = styled.h1<ThemeContextStyleProps>`
 `;
 
 export const TextItem = styled.p<ThemeContextStyleProps>`
-    font-size: 28px;
+    line-height: 32px;
+    font-size: 20px;
     color: ${({themestyles}) => themestyles.color };
 `;

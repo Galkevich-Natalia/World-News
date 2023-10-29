@@ -20,6 +20,7 @@ export const Title = styled.h1<ThemeContextStyleProps>`
 `;
 
 export const TextItem = styled.p<ThemeContextStyleProps>`
-    font-size: 28px;
+    line-height: 32px;
+    font-size: 20px;
     color: ${({themestyles}) => themestyles.color };
 `;
