@@ -28,7 +28,7 @@ function App() {
             <Body>
               < Header />
               <Routes>
-                <Route path="/" element={< News />} />
+                <Route path="https://Galkevich-Natalia.github.io/World-News" element={< News />} />
                 <Route path="/signup" element={
                   <CheckAuthorizedUser>
                     < SignUpForm />

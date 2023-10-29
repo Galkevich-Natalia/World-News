@@ -3,7 +3,7 @@ export type themeType = "light" | "dark";
 export enum Colors {
     WHITE = "#FFFFFF",
     BLACK = "#000000",
-    DARKGREY = "#3c4556",
+    DARKGREY = "#303236",
     TRANSPARENT = "transparent",
     GREY = "rgba(0, 0, 0, 0.5)"
 }
