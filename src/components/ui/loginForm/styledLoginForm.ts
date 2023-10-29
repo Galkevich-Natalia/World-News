@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     padding: 50px 15px;
-    min-height: 60vh;
+    min-height: 70vh;
 `;
 
 export const Wrapper = styled.div<ThemeContextStyleProps>`

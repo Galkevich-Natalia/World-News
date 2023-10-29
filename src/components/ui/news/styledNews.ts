@@ -5,7 +5,7 @@ export const ContainerNews = styled.div`
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
-    min-height: 60vh;
+    min-height: 70vh;
 `;
 
 export const WrapperNews = styled.div`

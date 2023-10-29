@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { ThemeContextStyleProps } from "../../../../../contexts/themeContext/types";
 
 export const ContainerCards = styled.div`
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

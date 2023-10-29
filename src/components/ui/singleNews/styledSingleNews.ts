@@ -6,7 +6,7 @@ export const ContainerSingleCard = styled.div`
     margin: 30px auto;
     max-width: 900px;
     width: 100%;
-    min-height: 60vh;
+    min-height: 70vh;
 `;
 
 export const TitleNews = styled.h1<ThemeContextStyleProps>`

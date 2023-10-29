@@ -5,9 +5,9 @@ import { StoreType } from "../../../redux/store";
 import { ContainerImg, ContainerSingleCard, Img, TextBody, TitleNews } from "./styledSingleNews";
 import { useContext, useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material";
-import { ErrorMessage } from "../../general/components/errorMessage/errorMessage";
 import { ThemeContext } from "../../../contexts/themeContext/themeContext";
 import { ThemeContextType } from "../../../contexts/themeContext/types";
+import { Loader } from "../../general/components/loader/loader";
 
 interface NewsCardProps {
     dataNews: NewsCardType;
@@ -18,8 +18,6 @@ export const SingleNews = () => {
     const params = useParams();
     const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state.newsDataCards);
     console.log("newsData", newsData)
-
-    const { loading, error} = useSelector((state: StoreType) => state.newsDataCards);
 
     // console.log("ALL_ARRAY", allArrDataNews)
 
@@ -36,14 +34,9 @@ export const SingleNews = () => {
         }
     }, [params, newsData, newsDataByCategory])
 
-    if (loading) {
-        return <CircularProgress color="secondary" />;
-    };
-
     console.log("FINDED_CARD", findCard)
     return (
         <ContainerSingleCard>
-            {error && <ErrorMessage errorText={error} />}
             {findCard ?
                 <>
                     <div>
@@ -56,7 +49,7 @@ export const SingleNews = () => {
                         <TextBody themestyles={themeContext.themeStyles} >{findCard?.body}</TextBody>
                     </div>
                 </>
-                : null
+                : < Loader />
             }
         </ContainerSingleCard>
     );
