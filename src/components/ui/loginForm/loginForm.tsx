@@ -17,9 +17,9 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../../contexts/themeContext/themeContext';
 import { ThemeContextType } from '../../../contexts/themeContext/types';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUserDataToStorage } from 'store/userStore/userStore';
+import { setUserDataToStorage } from '../../../store/userStore/userStore';
 import { useNavigate } from 'react-router-dom';
-import { AuthorizedContext, AuthorizedContextType } from 'contexts/authContext/authContext';
+import { AuthorizedContext, AuthorizedContextType } from '../../../contexts/authContext/authContext';
 
 export const LoginForm = () => {
 

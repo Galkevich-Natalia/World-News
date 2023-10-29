@@ -1,6 +1,6 @@
-import { isAuth } from "helpers/isAuth/isAuth";
+import { isAuth } from "../../helpers/isAuth/isAuth";
 import { createContext, useEffect, useState } from "react";
-import { removeUserDataFromStorage } from "store/userStore/userStore";
+import { removeUserDataFromStorage } from "../../store/userStore/userStore";
 
 export interface AuthorizedContextType {
     isAuthorized: boolean;

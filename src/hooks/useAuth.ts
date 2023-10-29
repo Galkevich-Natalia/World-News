@@ -1,4 +1,4 @@
-import { getUserDataFromStorage } from "store/userStore/userStore";
+import { getUserDataFromStorage } from "../store/userStore/userStore";
 
 export function useAuth() {
     const { email, token, id } = getUserDataFromStorage()

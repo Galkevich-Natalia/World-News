@@ -1,9 +1,9 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "@mui/material";
-import { AuthorizedContext, AuthorizedContextType } from "contexts/authContext/authContext";
+import { AuthorizedContext, AuthorizedContextType } from "../../../../../../contexts/authContext/authContext";
 import { useContext } from "react";
-import { getUserDataFromStorage } from "store/userStore/userStore";
+import { getUserDataFromStorage } from "../../../../../../store/userStore/userStore";
 import { ContBtnCLose, ContTitle, ContainerBtnLogOut, ContainerModal, DataUser } from "./styledModalUser";
 
 interface ModalUserProps {

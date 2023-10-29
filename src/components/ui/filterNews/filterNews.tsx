@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { fetchNewsByCategory } from "../../../redux/reducers/newsDataReducer/newsDataReducer";
 import { RenderCards } from "./components/renderCards/renderCards";
 import { Container } from "./styledFilterNews";
-import { Loader } from "components/general/components/loader/loader";
+import { Loader } from "../../general/components/loader/loader";
 
 export const FilterNews = () => {
     const { loading } = useSelector((state: StoreType) => state.newsDataCards);

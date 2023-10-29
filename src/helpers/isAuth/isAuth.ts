@@ -1,4 +1,4 @@
-import { getUserDataFromStorage } from "store/userStore/userStore"
+import { getUserDataFromStorage } from "../../store/userStore/userStore"
 
 export const isAuth = () => {
     const userDataFromLocalStorage = getUserDataFromStorage()
