@@ -8,7 +8,6 @@ import { BtnBurgerMenu, BtnLogin, BtnSearch, BtnSignUp, BtnUser,
 
 export const Header = () => {
 
-    // console.log("auth_context", isAuthorized)
     const { isAuthorized } = useContext<AuthorizedContextType>(AuthorizedContext)
 
     const [showContentWhenUserAuth, setShowContentWhenUserAuth] = useState<boolean>(false);

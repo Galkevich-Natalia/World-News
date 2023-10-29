@@ -27,7 +27,6 @@ export const SearchPage = () => {
             .filter((element, index, array) => array.findIndex(el => element.title === el.title) === index)
 
         setArrFoundNews(foundFilteredNews)
-        console.log("Found", foundFilteredNews)
     }
 
     return (

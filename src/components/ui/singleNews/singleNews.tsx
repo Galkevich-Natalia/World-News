@@ -17,9 +17,6 @@ export const SingleNews = () => {
 
     const params = useParams();
     const { newsData, newsDataByCategory } = useSelector((state: StoreType) => state.newsDataCards);
-    console.log("newsData", newsData)
-
-    // console.log("ALL_ARRAY", allArrDataNews)
 
     const [findCard, setFindCard] = useState<NewsCardType | null>(null);
     const themeContext = useContext<ThemeContextType>(ThemeContext);
@@ -34,7 +31,6 @@ export const SingleNews = () => {
         }
     }, [params, newsData, newsDataByCategory])
 
-    console.log("FINDED_CARD", findCard)
     return (
         <ContainerSingleCard>
             {findCard ?

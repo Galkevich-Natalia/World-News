@@ -28,8 +28,6 @@ export const RenderCards = () => {
         setCards(cutCards)
     }, [currentPage, newsByCategory])
 
-    // console.log("CARDS", cards)
-
     return (
         <>
             <ContainerCards>

@@ -17,7 +17,6 @@ export const ModalUser = ({ closeModal }: ModalUserProps) => {
     // const { logoutF } = useContext(AuthorizedContext)
 
     const dataUserFromStorage = getUserDataFromStorage();
-    console.log("dataUserFromStorage", dataUserFromStorage)
 
     const logOut = () => {
         authContext.logoutF()

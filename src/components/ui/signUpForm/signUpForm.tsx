@@ -47,12 +47,10 @@ export const SignUpForm = () => {
     });
 
     const onSubmit = (data: any) => {
-        console.log("DATA", data)
         const auth = getAuth();
-        console.log("Auth", auth)
+
         createUserWithEmailAndPassword(auth, data.email, data.password)
             .then((userCredential) => {
-                console.log("registration", userCredential)
                 setUserDataToStorage(userCredential.user)
                 navigate("/");
                 loginF()
@@ -60,7 +58,6 @@ export const SignUpForm = () => {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log("registration_error", error)
             });
     };
 
@@ -88,7 +85,6 @@ return (
                         label="Username"
                         variant="outlined"
                         sx={{ m: 0, width: '100%' }}
-                        // size="small"
                         error={!!errors.userName}
                     />
                     {errors.userName && (
@@ -110,7 +106,6 @@ return (
                         label="E-mail"
                         variant="outlined"
                         sx={{ m: 0, width: '100%' }}
-                        // size="small"
                         error={!!errors.email}
                     />
                     {errors.email && (
@@ -122,7 +117,6 @@ return (
                         <InputLabel
                             htmlFor="outlined-adornment-password"
                             error={!!errors.password}
-                        // size="small"
                         >Password</InputLabel>
                         <OutlinedInput
                             {...register("password", {
@@ -157,7 +151,6 @@ return (
                                 </InputAdornment>
                             }
                             label="Password"
-                            // size="small"
                             error={!!errors.password}
                         />
                         {errors.password && (
@@ -170,7 +163,6 @@ return (
                         <InputLabel
                             htmlFor="outlined-adornment-password"
                             error={!!errors.repeatPassword}
-                        // size="small"
                         >Repeat password</InputLabel>
 
                         <OutlinedInput
@@ -206,7 +198,6 @@ return (
                                 </InputAdornment>
                             }
                             label="Repeat password"
-                            // size="small"
                             error={!!errors.repeatPassword}
                         />
                         {errors.repeatPassword && (

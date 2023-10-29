@@ -25,7 +25,6 @@ export const ThemeContextProvider = ({ children }: BodyProps) => {
 
     useEffect(() => {
         const themeFromLocalStorage = getThemeToLocalStorage()
-        console.log("themeValue", themeFromLocalStorage )
 
         themeFromLocalStorage && setTheme(themeFromLocalStorage as themeType)
 
@@ -33,7 +32,6 @@ export const ThemeContextProvider = ({ children }: BodyProps) => {
 
     useEffect(() => {
         setThemeToLocalStorage(theme)
-        console.log("setThemeToLocalStorage")
     }, [theme])
 
     return (

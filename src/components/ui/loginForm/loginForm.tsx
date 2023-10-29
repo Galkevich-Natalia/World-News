@@ -47,7 +47,6 @@ export const LoginForm = () => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, data.email, data.password)
         .then((userCredential) => {
-            console.log("login", userCredential)
             setUserDataToStorage(userCredential.user)
             navigate("/");
             loginF()
@@ -55,7 +54,6 @@ export const LoginForm = () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log("login_error", error)
         });
     };
 
@@ -88,9 +86,7 @@ export const LoginForm = () => {
                                 width: '100%',
                                 borderRadius: '5px'
                             }}
-                            // size="small"
                             error={!!errors.email}
-
                         />
                         {errors.email && (
                             <ErrorInput>{errors.email.message}</ErrorInput>
@@ -101,7 +97,6 @@ export const LoginForm = () => {
                             <InputLabel
                                 htmlFor="outlined-adornment-password"
                                 error={!!errors.password}
-                            // size="small"
                             >Password</InputLabel>
                             <OutlinedInput
                                 {...register("password", {
@@ -136,7 +131,6 @@ export const LoginForm = () => {
                                     </InputAdornment>
                                 }
                                 label="Password"
-                                // size="small"
                                 error={!!errors.password}
                             />
                             {errors.password && (

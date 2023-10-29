@@ -21,6 +21,7 @@ export const fetchNews = createAsyncThunk(
                     },
                     $filter: {
                         forceMaxDataTimeWindow: '31',
+                        isDuplicate: "skipDuplicates"
                     },
                 },
                 "resultType": "articles",
@@ -30,11 +31,11 @@ export const fetchNews = createAsyncThunk(
                 "articlesCount": 100,
                 "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
             });
-            console.log("RESULT", result.data.articles.results)
+
             const filteredNews = result.data.articles.results
                 .filter((item: NewsCardType) => item.image !== null)
                 .filter((element: NewsCardType, index: number, array: NewsCardType[]) => array.findIndex((el: NewsCardType) => el.title === element.title) === index);
-            console.log("FilteredNews", filteredNews)
+
             dispatch(getNewsData(filteredNews));
         } catch (error: any) {
             return rejectWithValue(error.message);
@@ -64,11 +65,11 @@ export const fetchNewsByCategory = createAsyncThunk<void, string>(
                 "articlesCount": 100,
                 "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
             });
-            console.log("RESULT-Category", result)
+            
             const filteredNews = result.data.articles.results
                 .filter((item: NewsCardType) => item.image !== null)
                 .filter((element: NewsCardType, index: number, array: NewsCardType[]) => array.findIndex((el: NewsCardType) => el.title === element.title) === index);
-            console.log("FilteredCategoryNews", filteredNews)
+
             dispatch(getNewsDataByCategory(filteredNews));
         } catch (error: any) {
             return rejectWithValue(error.message);
@@ -94,7 +95,6 @@ export const newsSlice = createSlice({
                 state.error = null;
             })
             .addCase(fetchNews.fulfilled, (state) => {
-                // state.newsData = action.payload;
                 state.loading = false;
             })
             .addCase(fetchNews.rejected, (state, action) => {
