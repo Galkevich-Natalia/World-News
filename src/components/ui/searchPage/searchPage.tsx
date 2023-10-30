@@ -10,11 +10,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { ButtonSearch, ContainerSearch, Input } from "./styledSearchPage";
 
-
 export const SearchPage = () => {
 
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState<string>("");
     const [arrFoundNews, setArrFoundNews] = useState<Array<NewsCardType> | null>(null);
+    const [isNotFound, setIsNotFound] = useState<boolean>(false);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(event?.target.value)
@@ -30,6 +30,7 @@ export const SearchPage = () => {
             .filter((element, index, array) => array.findIndex(el => element.title === el.title) === index)
 
         setArrFoundNews(foundFilteredNews)
+        searchValue.length > 0 ? setIsNotFound(true) : setIsNotFound(false)
     }
 
     return (
@@ -42,6 +43,7 @@ export const SearchPage = () => {
                         placeholder="Enter your request..."
                         onChange={handleChange}
                         value={searchValue}
+                        autoComplete="off"
                     />
                     <ButtonSearch onClick={searchNews}>
                         <FontAwesomeIcon size="xl" icon={faMagnifyingGlass} />
@@ -51,7 +53,7 @@ export const SearchPage = () => {
             <div>
                 {arrFoundNews ?
                     arrFoundNews.map((item) => < NewsCard key={uuidv4()} dataNews={item} />)
-                    : null
+                    : !arrFoundNews && isNotFound ? <span>Not Found</span> : null
                 }
             </div>
         </ContainerSearch>
