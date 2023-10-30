@@ -13,7 +13,7 @@ export const News = () => {
     const news = useSelector((state: StoreType) => state.newsDataCards.newsData);
     const { loading } = useSelector((state: StoreType) => state.newsDataCards);
 
-    const cutNews = news.slice(0, 10);
+    const cutNews = news.slice(0, 16);
 
     return (
         <ContainerNews>

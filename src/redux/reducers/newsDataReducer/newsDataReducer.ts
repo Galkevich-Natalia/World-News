@@ -29,7 +29,7 @@ export const fetchNews = createAsyncThunk(
                 "includeArticleImage": true,
                 "includeArticleEventUri": true,
                 "articlesCount": 100,
-                "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
+                "apiKey": "5fabd35b-7e2e-49d4-818e-aa3f58d13389"
             });
 
             const filteredNews = result.data.articles.results
@@ -63,7 +63,7 @@ export const fetchNewsByCategory = createAsyncThunk<void, string>(
                 "includeArticleCategories": true,
                 "includeArticleImage": true,
                 "articlesCount": 100,
-                "apiKey": "2782e2f9-852f-4e1c-9217-b17e3891a085"
+                "apiKey": "5fabd35b-7e2e-49d4-818e-aa3f58d13389"
             });
 
             const filteredNews = result.data.articles.results
